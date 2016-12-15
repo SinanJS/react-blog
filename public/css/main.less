@@ -1,0 +1,111 @@
+@dark: #333;
+@yellow: #F5DA55;
+@blue: #337ab7;
+@deep-blue: #23527c;
+
+html, body, p, span {
+  font-family: "Microsoft YaHei";
+  font-size: 12px;
+  color: @dark;
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  color: @blue;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: @deep-blue;
+  text-decoration: underline;
+}
+
+/*--页首部分--*/
+.page-head {
+  flex-wrap: nowrap;
+  background-color: @yellow;
+  border-top: 2px solid #333;
+  .logo-img {
+    height: 35px;
+  }
+  .head-box {
+    display: flex;
+    flex-wrap: nowrap;
+    .head-left, .head-right {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+    .head-left {
+      width: 70%;
+    }
+    .head-right {
+      width: 30%;
+      text-align: right;
+      flex-direction: row-reverse;
+    }
+    .head-item {
+      flex-shrink: 0;
+      width: 65px;
+      text-align: center;
+      .link-item {
+        color: #333;
+        font-size: 17px;
+        text-align: center;
+        line-height: 33px;
+      }
+      .link-item:hover {
+        text-decoration: none;
+      }
+    }
+    .head-github {
+
+    }
+  }
+}
+
+.content-box {
+  padding: 5px 15px;
+  margin: 0 auto;
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+  }
+  @media screen and (max-width: 1199px) {
+
+  }
+
+}
+
+.for-pc {
+  @media screen and (min-width: 1000px) {
+    display: flex;
+  }
+  @media screen and (max-width: 999px) {
+    display: none !important;
+  }
+}
+.for-phone {
+  @media screen and (min-width: 1000px) {
+    display: none !important;
+  }
+  @media screen and (max-width: 999px) {
+    display: flex;
+  }
+}
+.btn{
+  border:0px;
+  border-radius: 4px;
+}
+.btn-menu{
+  height: 35px;
+  width: 40px;
+  background-color: #F5DA55;
+  background-image: url(../img/icon/menu.png);
+  background-size: 75%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  padding: 10px;;
+}
+.btn-menu:hover{
+  background-color: #ebd054;
+}

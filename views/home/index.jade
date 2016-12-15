@@ -1,0 +1,45 @@
+doctype html
+html(lang="en")
+    head
+        title Welcome SinanBlog!
+        meta(charset="UTF-8")
+        link(rel="stylesheet", href="/css/main.css")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        script(src="/javascripts/react.js")
+        script(src="/javascripts/react-dom.js")
+    body
+        header.page-head
+            // pc
+            .content-box.head-box.for-pc
+                .head-left
+                    .head-img
+                        img.logo-img(src="/images/logo.png", alt="logo here")
+                    
+                    .head-item(style="margin-left:35px;")
+                        a.link-item(href="#", target="_blank") 首页
+                    
+                    .head-item
+                        a.link-item(href="#", target="_blank") 博客
+                    
+                    .head-item
+                        a.link-item(href="#", target="_blank") 相册
+                    
+                    .head-item
+                        a.link-item(href="#", target="_blank") 随笔
+                
+                .head-right
+                    .head-item
+                        a.link-item(href="https://github.com/SinanJS/sinan-blog", target="_blank") GitHub
+            // 手机
+            .content-box.head-box.for-phone
+                .head-left
+                    .head-img
+                        img.logo-img(src="/images/logo.png", alt="logo here")
+                
+                .head-right
+                    .head-item
+                        button.btn.btn-menu
+        section.page-banner
+        section.page-body
+        fonter.page-foot

@@ -1,0 +1,105 @@
+html,
+body,
+p,
+span {
+  font-family: "Microsoft YaHei";
+  font-size: 12px;
+  color: #333;
+  margin: 0px;
+  padding: 0px;
+}
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #23527c;
+  text-decoration: underline;
+}
+/*--页首部分--*/
+.page-head {
+  flex-wrap: nowrap;
+  background-color: #F5DA55;
+  border-top: 2px solid #333;
+}
+.page-head .logo-img {
+  height: 35px;
+}
+.page-head .head-box {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.page-head .head-box .head-left,
+.page-head .head-box .head-right {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.page-head .head-box .head-left {
+  width: 70%;
+}
+.page-head .head-box .head-right {
+  width: 30%;
+  text-align: right;
+  flex-direction: row-reverse;
+}
+.page-head .head-box .head-item {
+  flex-shrink: 0;
+  width: 65px;
+  text-align: center;
+}
+.page-head .head-box .head-item .link-item {
+  color: #333;
+  font-size: 17px;
+  text-align: center;
+  line-height: 33px;
+}
+.page-head .head-box .head-item .link-item:hover {
+  text-decoration: none;
+}
+.content-box {
+  padding: 5px 15px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1200px) {
+  .content-box {
+    width: 1200px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .for-pc {
+    display: flex;
+  }
+}
+@media screen and (max-width: 999px) {
+  .for-pc {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .for-phone {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 999px) {
+  .for-phone {
+    display: flex;
+  }
+}
+.btn {
+  border: 0px;
+  border-radius: 4px;
+}
+.btn-menu {
+  height: 35px;
+  width: 40px;
+  background-color: #F5DA55;
+  background-image: url(../img/icon/menu.png);
+  background-size: 75%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  padding: 10px;
+}
+.btn-menu:hover {
+  background-color: #ebd054;
+}
