@@ -27,7 +27,13 @@ a:hover, a:focus {
   background-color: @yellow;
   border-top: 2px solid #333;
   .logo-img {
-    height: 35px;
+    @media screen and (min-width: 1000px) {
+      height: 35px;
+    }
+    @media screen and (max-width: 999px) {
+      height: 30px;
+      margin-top: 2px;
+    }
   }
   .head-box {
     display: flex;
@@ -58,7 +64,14 @@ a:hover, a:focus {
         text-decoration: none;
       }
     }
-    .head-github {
+    .drop-ul{
+      position: relative;
+      ul{
+        margin: 0px;
+        li{
+          color:#333;
+        }
+      }
 
     }
   }
@@ -100,7 +113,7 @@ a:hover, a:focus {
   height: 35px;
   width: 40px;
   background-color: #F5DA55;
-  background-image: url(../img/icon/menu.png);
+  background-image: url(../images/icon/menu.png);
   background-size: 75%;
   background-position: 50%;
   background-repeat: no-repeat;
@@ -108,4 +121,54 @@ a:hover, a:focus {
 }
 .btn-menu:hover{
   background-color: #ebd054;
+}
+
+//banner部分
+.banner-box{
+  width: 100%;
+  background-image: url(../images/banner-2.jpg);
+  @media screen and (min-width: 1000px) {
+    height: 450px;
+    background-size: 100%;
+    background-position: center 0;
+    background-repeat: repeat;
+    text-align: center;
+    .banner-title{
+      color: @yellow;
+      font-size: 57px;
+      padding-top: 170px;
+      text-shadow: 0px 1px 12px #333;
+    }
+    .banner-subtxt{
+      font-size: 20px;
+      margin: 10px 0px;
+      text-shadow: 0px 1px 12px #333;
+    }
+  }
+  @media screen and (max-width: 999px) {
+    background-size: 100%;
+    background-position: center 0;
+    background-repeat: repeat;
+    text-align: center;
+    .banner-title{
+      color: @yellow;
+      font-size: 26px;
+      text-shadow: 0px 1px 12px #333;
+      padding-top: 32px;
+      padding-bottom: 4px;
+    }
+    .banner-subtxt{
+      font-size: 15px;
+      padding-top: 10px;
+      text-shadow: 0px 1px 12px #333;
+      padding-bottom: 51px;
+    }
+  }
+
+}
+.f-yellow{
+  color:@yellow;
+}
+.f-w{
+  color:#fff;
 }

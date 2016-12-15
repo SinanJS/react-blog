@@ -23,7 +23,7 @@ gulp.task('jsx', function() {
         .pipe(babel({
             presets: ['react','es2015']
         }))
-    .pipe(gulp.dest("src"));
+    .pipe(gulp.dest("public/javascripts"));
 });
 
 gulp.task("default",['jsx','less'],function(){
