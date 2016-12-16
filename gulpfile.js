@@ -15,7 +15,7 @@ gulp.task('less', function () {
 });
 
 gulp.task('jsx', function() {
-    gulp.src("views/**/*.jsx")
+    gulp.src(["views/**/*.jsx","public/javascripts/**/*.jsx"])
         .pipe(plumber({}, true, function(err){
             console.log('ERROR!!!!');
             console.log(err);
@@ -25,6 +25,7 @@ gulp.task('jsx', function() {
         }))
     .pipe(gulp.dest("public/javascripts"));
 });
+
 
 gulp.task("default",['jsx','less'],function(){
     gulp.watch('views/**/*.jsx',function(){

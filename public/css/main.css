@@ -66,13 +66,36 @@ a:focus {
   text-decoration: none;
 }
 .page-head .head-box .drop-ul {
-  position: relative;
+  position: absolute;
+  top: 47px;
+  background-color: #fff;
+  box-shadow: 1px 3px 10px #333;
+  right: 0px;
+  min-width: 150px;
 }
 .page-head .head-box .drop-ul ul {
   margin: 0px;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  text-align: left;
 }
 .page-head .head-box .drop-ul ul li {
   color: #333;
+  list-style: none;
+  padding: 10px 15px;
+  border-top: 1px solid #cbcbcb;
+}
+.page-head .head-box .drop-ul ul li a {
+  color: #333;
+  font-size: 14px;
+  display: block;
+}
+.page-head .head-box .drop-ul ul li:active {
+  background-color: #cbcbcb;
+}
+.page-head .head-box .drop-ul ul li:first-child {
+  border-top: 0px;
 }
 .content-box {
   padding: 5px 15px;

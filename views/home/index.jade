@@ -6,8 +6,7 @@ html(lang="en")
         link(rel="stylesheet", href="/css/main.css")
         meta(name="viewport", content="width=device-width, initial-scale=1")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        script(src="/javascripts/react.js")
-        script(src="/javascripts/react-dom.js")
+        script(src="/javascripts/sea.js")
     body
         header.page-head
             // pc
@@ -15,19 +14,19 @@ html(lang="en")
                 .head-left
                     .head-img
                         img.logo-img(src="/images/logo.png", alt="logo here")
-                    
+
                     .head-item(style="margin-left:35px;")
                         a.link-item(href="#", target="_blank") 首页
-                    
+
                     .head-item
                         a.link-item(href="#", target="_blank") 博客
-                    
+
                     .head-item
                         a.link-item(href="#", target="_blank") 相册
-                    
+
                     .head-item
                         a.link-item(href="#", target="_blank") 随笔
-                
+
                 .head-right
                     .head-item
                         a.link-item(href="https://github.com/SinanJS/sinan-blog", target="_blank") GitHub
@@ -46,4 +45,9 @@ html(lang="en")
                 p.banner-subtxt.f-w 一个简约的网站
         section.page-body(style="height:1600px")
         fonter.page-foot
-        script(src="/javascripts/home/index.js")
+    script(type="text/javascript").
+            seajs.config({
+                base: "./javascripts",
+                alias: {}
+            });
+            seajs.use("./javascripts/home/index.js");
