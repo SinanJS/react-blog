@@ -1,11 +1,10 @@
 "use strict";
-seajs.use(["react", 'react-dom','react-plu','selector'], function (React, ReactDOM, Plus,$) {
-    var MenuBtn =Plus.MenuBtn;
 
-    ReactDOM.render(
-        <MenuBtn/>,
-        $("#btn-menubox")[0]
-    );
+seajs.use(["react", 'react-dom', 'react-plu', 'selector'], function (React, ReactDOM, Plus, $) {
+
+    var MenuBtn = Plus.MenuBtn;
+
+    ReactDOM.render(React.createElement(MenuBtn, null), $("#btn-menubox")[0]);
     var target = document.querySelector('.banner-box');
 
     document.addEventListener('scroll', function () {

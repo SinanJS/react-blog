@@ -1,5 +1,6 @@
 "use strict";
 seajs.use(["react", 'react-dom','react-plu','selector'], function (React, ReactDOM, Plus,$) {
+
     var MenuBtn =Plus.MenuBtn;
 
     ReactDOM.render(
