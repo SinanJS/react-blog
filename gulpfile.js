@@ -28,7 +28,7 @@ gulp.task('jsx', function() {
 
 
 gulp.task("default",['jsx','less'],function(){
-    gulp.watch('views/**/*.jsx',function(){
+    gulp.watch(['views/**/*.jsx',"public/javascripts/**/*.jsx"],function(){
        gulp.start(['jsx']);
     });
     gulp.watch('public/css/*.less',function(){

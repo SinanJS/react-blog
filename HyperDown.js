@@ -235,7 +235,7 @@
           matches = 1 <= arguments.length ? slice.call(arguments, 0) : [];
           url = _this.cleanUrl(matches[1]);
           link = _this.call('parseLink', matches[1]);
-          return _this.makeHolder("<a href=\"" + url + "\">" + link + "</a>");
+          return _this.makeHolder("<a target='_blank' href=\"" + url + "\">" + link + "</a>");
         };
       })(this));
       text = text.replace(/<(\/?)([a-z0-9-]+)(\s+[^>]*)?>/ig, (function(_this) {
@@ -288,7 +288,7 @@
           escaped = _this.parseInline(_this.escapeBracket(matches[1]), '', false, false);
           url = _this.escapeBracket(matches[2]);
           url = _this.cleanUrl(url);
-          return _this.makeHolder("<a href=\"" + url + "\">" + escaped + "</a>");
+          return _this.makeHolder("<a target='_blank' href=\"" + url + "\">" + escaped + "</a>");
         };
       })(this));
       text = text.replace(/\[((?:[^\]]|\\\]|\\\[)+?)\]\[((?:[^\]]|\\\]|\\\[)+?)\]/g, (function(_this) {
@@ -296,7 +296,7 @@
           var escaped, matches, result;
           matches = 1 <= arguments.length ? slice.call(arguments, 0) : [];
           escaped = _this.parseInline(_this.escapeBracket(matches[1]), '', false, false);
-          result = _this.definitions[matches[2]] != null ? "<a href=\"" + _this.definitions[matches[2]] + "\">" + escaped + "</a>" : escaped;
+          result = _this.definitions[matches[2]] != null ? "<a target='_blank' href=\"" + _this.definitions[matches[2]] + "\">" + escaped + "</a>" : escaped;
           return _this.makeHolder(result);
         };
       })(this));
@@ -308,7 +308,7 @@
             var link, matches;
             matches = 1 <= arguments.length ? slice.call(arguments, 0) : [];
             link = _this.call('parseLink', matches[2]);
-            return matches[1] + "<a href=\"" + matches[2] + "\">" + link + "</a>" + matches[4];
+            return matches[1] + "<a target='_blank' href=\"" + matches[2] + "\">" + link + "</a>" + matches[4];
           };
         })(this));
       }

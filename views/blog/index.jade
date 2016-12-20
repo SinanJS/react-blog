@@ -9,45 +9,15 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         script(src="/javascripts/sea.js")
     body
-        header.page-head
-            // pc
-            .content-box.head-box.for-pc
-                .head-left
-                    .head-img
-                        img.logo-img(src="/images/logo.png", alt="logo here")
-
-                    .head-item(style="margin-left:35px;")
-                        a.link-item(href="#", target="_blank") 首页
-
-                    .head-item
-                        a.link-item(href="#", target="_blank") 博客
-
-                    .head-item
-                        a.link-item(href="#", target="_blank") 相册
-
-                    .head-item
-                        a.link-item(href="#", target="_blank") 随笔
-
-                .head-right
-                    .head-item
-                        a.link-item(href="https://github.com/SinanJS/sinan-blog", target="_blank") GitHub
-            // 手机
-            .content-box.head-box.for-phone
-                .head-left
-                    .head-img
-                        img.logo-img(src="/images/logo.png", alt="logo here")
-                .head-right
-                    .head-item#btn-menubox
-                        //button.btn.btn-menu
+        div#header-box
         section.page-banner
-            // pc
             .banner-box
                 p.banner-title Welcome Titan Blog !
                 p.banner-subtxt.f-w 一个简约的网站
-        section.page-body
-            p #{fileName}#{createTime}
-            //textarea#md-txt #{contents}
-            div#md-preview !{html}
+        section.page-body.content-box
+            //p #{fileName}#{createTime}
+            div.md-preview !{html}
+            div.bd-other
         fonter.page-foot
     script(type="text/javascript").
             seajs.config({

@@ -2,15 +2,18 @@
 @yellow: #F5DA55;
 @blue: #337ab7;
 @deep-blue: #23527c;
-
-html, body, p, span {
-  font-family: "Microsoft YaHei";
+@d-yellow:#f0ad4e;
+html, body, p {
+  font-family: Consolas, Microsoft YaHei, Source Code Pro, Menlo, Monaco, Courier New, monospace;
   font-size: 12px;
   color: @dark;
   margin: 0px;
   padding: 0px;
 }
-
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 a {
   color: @blue;
   text-decoration: none;
@@ -22,6 +25,14 @@ a:hover, a:focus {
 }
 
 /*--页首部分--*/
+#header-box{
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+.page-banner{
+  margin-top: 48px;
+}
 .page-head {
   flex-wrap: nowrap;
   background-color: @yellow;
@@ -64,41 +75,50 @@ a:hover, a:focus {
         text-decoration: none;
       }
     }
-    .drop-ul{
+    .drop-ul {
       position: absolute;
       top: 47px;
       background-color: #fff;
       box-shadow: 1px 3px 10px #333;
       right: 0px;
       min-width: 150px;
-      ul{
+      z-index: 99;
+      ul {
         margin: 0px;
         list-style: none;
         padding: 0;
         width: 100%;
         text-align: left;
-        li{
-          color:#333;
+        li {
+          color: #333;
           list-style: none;
           padding: 10px 15px;
           color: #333;
           list-style: none;
           padding: 10px 15px;
           border-top: 1px solid #cbcbcb;
-          a{
-            color:@dark;
+          a {
+            color: @dark;
             font-size: 14px;
             display: block;
           }
         }
-        li:active{
+        li:active {
           background-color: #cbcbcb;
         }
-        li:first-child{
-          border-top:0px;
+        li:first-child {
+          border-top: 0px;
         }
       }
-
+    }
+    .btn-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9;
+      display: none;
     }
   }
 }
@@ -123,6 +143,7 @@ a:hover, a:focus {
     display: none !important;
   }
 }
+
 .for-phone {
   @media screen and (min-width: 1000px) {
     display: none !important;
@@ -131,11 +152,13 @@ a:hover, a:focus {
     display: flex;
   }
 }
-.btn{
-  border:0px;
+
+.btn {
+  border: 0px;
   border-radius: 4px;
 }
-.btn-menu{
+
+.btn-menu {
   height: 35px;
   width: 40px;
   background-color: #F5DA55;
@@ -143,14 +166,17 @@ a:hover, a:focus {
   background-size: 75%;
   background-position: 50%;
   background-repeat: no-repeat;
-  padding: 10px;;
+  padding: 10px;
+  position: relative;
+  z-index: 99;
 }
-.btn-menu:hover{
+
+.btn-menu:hover {
   background-color: #ebd054;
 }
 
 //banner部分
-.banner-box{
+.banner-box {
   width: 100%;
   background-image: url(../images/banner-2.jpg);
   @media screen and (min-width: 1000px) {
@@ -159,13 +185,14 @@ a:hover, a:focus {
     background-position: center 0;
     background-repeat: repeat;
     text-align: center;
-    .banner-title{
+    .banner-title {
       color: @yellow;
       font-size: 57px;
       padding-top: 170px;
       text-shadow: 0px 1px 12px #333;
     }
-    .banner-subtxt{
+
+    .banner-subtxt {
       font-size: 20px;
       margin: 10px 0px;
       text-shadow: 0px 1px 12px #333;
@@ -176,14 +203,15 @@ a:hover, a:focus {
     background-position: center 0;
     background-repeat: repeat;
     text-align: center;
-    .banner-title{
+    .banner-title {
       color: @yellow;
       font-size: 26px;
       text-shadow: 0px 1px 12px #333;
       padding-top: 32px;
       padding-bottom: 4px;
     }
-    .banner-subtxt{
+
+    .banner-subtxt {
       font-size: 15px;
       padding-top: 10px;
       text-shadow: 0px 1px 12px #333;
@@ -192,9 +220,109 @@ a:hover, a:focus {
   }
 
 }
-.f-yellow{
-  color:@yellow;
+
+.f-yellow {
+  color: @yellow;
 }
-.f-w{
-  color:#fff;
+
+.f-w {
+  color: #fff;
+}
+
+.page-body{
+  @media screen and (min-width: 1000px){
+    display: flex;
+    .md-preview{
+      width: 800px;
+      flex-wrap: nowrap;
+    }
+    .bd-other{
+      flex-wrap: nowrap;
+      width: 400px;
+    }
+  }
+  @media screen and (max-width: 1000px){
+    display: block;
+    .bd-other{
+      display: none;
+    }
+  }
+}
+//md文章内容
+.md-preview {
+  font-size: 1.2rem;
+  hr{
+    background-color:#E6E6E6;
+    height: 1px;
+    border:0px;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    border-bottom: 1px solid #E6E6E6;
+    padding-bottom: 5px;
+  }
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.8rem;
+    border-bottom: 0;
+  }
+  h4 {
+    font-size: 1.6rem;
+    border-bottom: 0;
+  }
+  h5 {
+    font-size: 1.4rem;
+    border-bottom: 0;
+  }
+  h6 {
+    font-size: 1.2rem;
+    border-bottom: 0;
+  }
+  blockquote {
+    border-left: 4px solid @d-yellow;
+    background: #f6f6f6;
+    color: #555;
+    font-size: 1em;
+    margin: 0px;
+    padding: 5px 10px;
+  }
+  code, kbd, pre, samp {
+    font-family: Consolas, Microsoft YaHei, Source Code Pro, Menlo, Monaco, Courier New, monospace;
+  }
+  code.markup {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+  }
+  p {
+    margin: 5px;
+    font-size: 1.2rem;
+    line-height: 1.7;
+  }
+  img{
+    display: block;
+    max-width: 100%;
+  }
+  table{
+    width: 100%;
+    border:1px solid #E6E6E6;
+    thead{
+      background: #eeeeee;
+    }
+
+    tr{
+      line-height: 1.6;
+      th,td{
+        border:1px solid #E6E6E6;
+        padding: 10px;
+      }
+    }
+  }
 }

@@ -1,12 +1,15 @@
 html,
 body,
-p,
-span {
-  font-family: "Microsoft YaHei";
+p {
+  font-family: Consolas, Microsoft YaHei, Source Code Pro, Menlo, Monaco, Courier New, monospace;
   font-size: 12px;
   color: #333;
   margin: 0px;
   padding: 0px;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 a {
   color: #337ab7;
@@ -18,6 +21,14 @@ a:focus {
   text-decoration: underline;
 }
 /*--页首部分--*/
+#header-box {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+.page-banner {
+  margin-top: 48px;
+}
 .page-head {
   flex-wrap: nowrap;
   background-color: #F5DA55;
@@ -72,6 +83,7 @@ a:focus {
   box-shadow: 1px 3px 10px #333;
   right: 0px;
   min-width: 150px;
+  z-index: 99;
 }
 .page-head .head-box .drop-ul ul {
   margin: 0px;
@@ -96,6 +108,15 @@ a:focus {
 }
 .page-head .head-box .drop-ul ul li:first-child {
   border-top: 0px;
+}
+.page-head .head-box .btn-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  display: none;
 }
 .content-box {
   padding: 5px 15px;
@@ -139,6 +160,8 @@ a:focus {
   background-position: 50%;
   background-repeat: no-repeat;
   padding: 10px;
+  position: relative;
+  z-index: 99;
 }
 .btn-menu:hover {
   background-color: #ebd054;
@@ -193,4 +216,110 @@ a:focus {
 }
 .f-w {
   color: #fff;
+}
+@media screen and (min-width: 1000px) {
+  .page-body {
+    display: flex;
+  }
+  .page-body .md-preview {
+    width: 800px;
+    flex-wrap: nowrap;
+  }
+  .page-body .bd-other {
+    flex-wrap: nowrap;
+    width: 400px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .page-body {
+    display: block;
+  }
+  .page-body .bd-other {
+    display: none;
+  }
+}
+.md-preview {
+  font-size: 1.2rem;
+}
+.md-preview hr {
+  background-color: #E6E6E6;
+  height: 1px;
+  border: 0px;
+}
+.md-preview h1,
+.md-preview h2,
+.md-preview h3,
+.md-preview h4,
+.md-preview h5,
+.md-preview h6 {
+  font-weight: normal;
+  border-bottom: 1px solid #E6E6E6;
+  padding-bottom: 5px;
+}
+.md-preview h1 {
+  font-size: 2.2rem;
+}
+.md-preview h2 {
+  font-size: 2rem;
+}
+.md-preview h3 {
+  font-size: 1.8rem;
+  border-bottom: 0;
+}
+.md-preview h4 {
+  font-size: 1.6rem;
+  border-bottom: 0;
+}
+.md-preview h5 {
+  font-size: 1.4rem;
+  border-bottom: 0;
+}
+.md-preview h6 {
+  font-size: 1.2rem;
+  border-bottom: 0;
+}
+.md-preview blockquote {
+  border-left: 4px solid #f0ad4e;
+  background: #f6f6f6;
+  color: #555;
+  font-size: 1em;
+  margin: 0px;
+  padding: 5px 10px;
+}
+.md-preview code,
+.md-preview kbd,
+.md-preview pre,
+.md-preview samp {
+  font-family: Consolas, Microsoft YaHei, Source Code Pro, Menlo, Monaco, Courier New, monospace;
+}
+.md-preview code.markup {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+.md-preview p {
+  margin: 5px;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+.md-preview img {
+  display: block;
+  max-width: 100%;
+}
+.md-preview table {
+  width: 100%;
+  border: 1px solid #E6E6E6;
+}
+.md-preview table thead {
+  background: #eeeeee;
+}
+.md-preview table tr {
+  line-height: 1.6;
+}
+.md-preview table tr th,
+.md-preview table tr td {
+  border: 1px solid #E6E6E6;
+  padding: 10px;
 }
