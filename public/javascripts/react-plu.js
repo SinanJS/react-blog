@@ -5,7 +5,9 @@ define(function (require, exports, module) {
     var ReactDOM = require('react-dom');
     var $ = require("selector");
     var P = {};
-
+    var routes = {
+        list: [{ title: "首页", link: "/index" }, { title: "博客", link: "/blog" }]
+    };
     P.MenuBtn = React.createClass({
         displayName: 'MenuBtn',
 
@@ -28,6 +30,9 @@ define(function (require, exports, module) {
             btnBg.style.display = "none";
         },
         render: function render() {
+            var height = {
+                height: document.body.clientHeight + "px"
+            };
             return React.createElement(
                 'div',
                 null,
@@ -85,7 +90,7 @@ define(function (require, exports, module) {
                         )
                     )
                 ),
-                React.createElement('div', { className: 'btn-bg', ref: 'btnBg', onClick: this.bgClick })
+                React.createElement('div', { className: 'btn-bg', style: height, ref: 'btnBg', onClick: this.bgClick })
             );
         }
     });

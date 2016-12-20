@@ -5,7 +5,12 @@ define(function (require, exports, module) {
     var ReactDOM = require('react-dom');
     var $ = require("selector");
     var P = {};
-
+    var routes = {
+        list:[
+            { title:"首页",link:"/index"},
+            { title:"博客",link:"/blog"},
+        ]
+    };
     P.MenuBtn = React.createClass({
         handleClick: function (e) {
             var dropUl = this.refs.dropUl;
@@ -26,6 +31,9 @@ define(function (require, exports, module) {
             btnBg.style.display = "none";
         },
         render: function () {
+            var height = {
+                height:document.body.clientHeight+"px"
+            };
             return (
                 <div>
                     <button className="btn btn-menu" onClick={this.handleClick}></button>
@@ -38,7 +46,7 @@ define(function (require, exports, module) {
                             <li><a href="#" target="_blank">GitHub</a></li>
                         </ul>
                     </div>
-                    <div className="btn-bg" ref="btnBg" onClick={this.bgClick}></div>
+                    <div className="btn-bg" style={height} ref="btnBg" onClick={this.bgClick}></div>
                 </div>
             );
         }
