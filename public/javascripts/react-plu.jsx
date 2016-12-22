@@ -5,69 +5,72 @@ define(function (require, exports, module) {
     var ReactDOM = require('react-dom');
     var $ = require("selector");
     var P = {};
-    var routes = {
-        list:[
-            { title:"首页",link:"/index"},
-            { title:"博客",link:"/blog"},
-        ]
-    };
+
     P.MenuBtn = React.createClass({
-        handleClick: function (e) {
-            var dropUl = this.refs.dropUl;
-            var btnBg = this.refs.btnBg;
-            console.log(btnBg);
-            if (!dropUl.style.display || dropUl.style.display == "none") {
-                dropUl.style.display = "block";
-                btnBg.style.display = "block";
-            } else {
-                dropUl.style.display = "none";
-                btnBg.style.display = "none";
-            }
+        getInitialState: function () {
+            return {
+                display: false
+            };
         },
-        bgClick: function () {
-            var dropUl = this.refs.dropUl;
-            var btnBg = this.refs.btnBg;
-            dropUl.style.display = "none";
-            btnBg.style.display = "none";
+        handleClick: function (e) {
+            this.setState({
+                display:!this.state.display
+            });
         },
         render: function () {
-            var height = {
-                height:document.body.clientHeight+"px"
-            };
+            var display = this.state.display ? "block" : "none";
+            var height = document.body.clientHeight + "px";
+            console.log(this.props)
             return (
                 <div>
                     <button className="btn btn-menu" onClick={this.handleClick}></button>
-                    <div className="drop-ul" ref="dropUl" style={{display:"none"}}>
+                    <div className="drop-ul" ref="dropUl" style={{display:display}}>
                         <ul>
-                            <li><a href="#" target="_blank">首页</a></li>
-                            <li><a href="#" target="_blank">相册</a></li>
-                            <li><a href="#" target="_blank">博客</a></li>
-                            <li><a href="#" target="_blank">随笔</a></li>
-                            <li><a href="#" target="_blank">GitHub</a></li>
+                            {
+                                this.props.list.map(function(item){
+                                    return <li><a href={item.link} target="_blank">{item.title}</a></li>
+                                })
+                            }
                         </ul>
                     </div>
-                    <div className="btn-bg" style={height} ref="btnBg" onClick={this.bgClick}></div>
+                    <div className="btn-bg" style={{height:height,display:display}} ref="btnBg" onClick={this.handleClick}></div>
                 </div>
             );
         }
     });
     var MenuBtn = P.MenuBtn;
     P.PageHead = React.createClass({
+        getDefaultProps:function(){
+            var routes = {
+                list: [
+                    {title: "首页", link: "/index"},
+                    {title: "博客", link: "/blog"},
+                    {title: "随笔", link: "#"},
+                    {title: "相册", link: "#"},
+                    {title: "GitHub", link: "https://github.com/SinanJS/sinan-blog",phoneOnly:true}
+                ]
+            };
+            return routes;
+        },
         render: function () {
             return (
                 <div className="page-head">
                     <div className="content-box head-box for-pc">
                         <div className="head-left">
-                            <div className="head-img">
+                            <div className="head-img" style={{marginRight:"35px"}}>
                                 <img src="/images/logo.png" alt="logo here" className="logo-img"/>
                             </div>
-                            <div style={{marginLeft:"35px"}} className="head-item"><a href="#" target="_blank" className="link-item">首页</a></div>
-                            <div className="head-item"><a href="#" target="_blank" className="link-item">博客</a></div>
-                            <div className="head-item"><a href="#" target="_blank" className="link-item">相册</a></div>
-                            <div className="head-item"><a href="#" target="_blank" className="link-item">随笔</a></div>
+                            {
+                                this.props.list.map(function (item) {
+                                    if(!item.phoneOnly){
+                                        return <div className="head-item"><a href={item.link} target="_target" className="link-item">{item.title}</a></div>
+                                    }
+                                })
+                            }
                         </div>
                         <div className="head-right">
-                            <div className="head-item"><a href="https://github.com/SinanJS/sinan-blog" target="_blank" className="link-item">GitHub</a>
+                            <div className="head-item">
+                                <a href="https://github.com/SinanJS/sinan-blog" target="_blank" className="link-item">GitHub</a>
                             </div>
                         </div>
                     </div>
@@ -79,7 +82,7 @@ define(function (require, exports, module) {
                         </div>
                         <div className="head-right">
                             <div id="btn-menubox" className="head-item">
-                                <MenuBtn />
+                                <MenuBtn list={this.props.list}/>
                             </div>
                         </div>
                     </div>

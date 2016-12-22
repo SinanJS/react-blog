@@ -5,92 +5,48 @@ define(function (require, exports, module) {
     var ReactDOM = require('react-dom');
     var $ = require("selector");
     var P = {};
-    var routes = {
-        list: [{ title: "首页", link: "/index" }, { title: "博客", link: "/blog" }]
-    };
+
     P.MenuBtn = React.createClass({
         displayName: 'MenuBtn',
 
-        handleClick: function handleClick(e) {
-            var dropUl = this.refs.dropUl;
-            var btnBg = this.refs.btnBg;
-            console.log(btnBg);
-            if (!dropUl.style.display || dropUl.style.display == "none") {
-                dropUl.style.display = "block";
-                btnBg.style.display = "block";
-            } else {
-                dropUl.style.display = "none";
-                btnBg.style.display = "none";
-            }
+        getInitialState: function getInitialState() {
+            return {
+                display: false
+            };
         },
-        bgClick: function bgClick() {
-            var dropUl = this.refs.dropUl;
-            var btnBg = this.refs.btnBg;
-            dropUl.style.display = "none";
-            btnBg.style.display = "none";
+        handleClick: function handleClick(e) {
+            this.setState({
+                display: !this.state.display
+            });
         },
         render: function render() {
-            var height = {
-                height: document.body.clientHeight + "px"
-            };
+            var display = this.state.display ? "block" : "none";
+            var height = document.body.clientHeight + "px";
+            console.log(this.props);
             return React.createElement(
                 'div',
                 null,
                 React.createElement('button', { className: 'btn btn-menu', onClick: this.handleClick }),
                 React.createElement(
                     'div',
-                    { className: 'drop-ul', ref: 'dropUl', style: { display: "none" } },
+                    { className: 'drop-ul', ref: 'dropUl', style: { display: display } },
                     React.createElement(
                         'ul',
                         null,
-                        React.createElement(
-                            'li',
-                            null,
-                            React.createElement(
-                                'a',
-                                { href: '#', target: '_blank' },
-                                '\u9996\u9875'
-                            )
-                        ),
-                        React.createElement(
-                            'li',
-                            null,
-                            React.createElement(
-                                'a',
-                                { href: '#', target: '_blank' },
-                                '\u76F8\u518C'
-                            )
-                        ),
-                        React.createElement(
-                            'li',
-                            null,
-                            React.createElement(
-                                'a',
-                                { href: '#', target: '_blank' },
-                                '\u535A\u5BA2'
-                            )
-                        ),
-                        React.createElement(
-                            'li',
-                            null,
-                            React.createElement(
-                                'a',
-                                { href: '#', target: '_blank' },
-                                '\u968F\u7B14'
-                            )
-                        ),
-                        React.createElement(
-                            'li',
-                            null,
-                            React.createElement(
-                                'a',
-                                { href: '#', target: '_blank' },
-                                'GitHub'
-                            )
-                        )
+                        this.props.list.map(function (item) {
+                            return React.createElement(
+                                'li',
+                                null,
+                                React.createElement(
+                                    'a',
+                                    { href: item.link, target: '_blank' },
+                                    item.title
+                                )
+                            );
+                        })
                     )
                 ),
-                React.createElement('div', { className: 'btn-bg', style: height, ref: 'btnBg', onClick: this.bgClick })
+                React.createElement('div', { className: 'btn-bg', style: { height: height, display: display }, ref: 'btnBg', onClick: this.handleClick })
             );
         }
     });
@@ -98,6 +54,12 @@ define(function (require, exports, module) {
     P.PageHead = React.createClass({
         displayName: 'PageHead',
 
+        getDefaultProps: function getDefaultProps() {
+            var routes = {
+                list: [{ title: "首页", link: "/index" }, { title: "博客", link: "/blog" }, { title: "随笔", link: "#" }, { title: "相册", link: "#" }, { title: "GitHub", link: "https://github.com/SinanJS/sinan-blog", phoneOnly: true }]
+            };
+            return routes;
+        },
         render: function render() {
             return React.createElement(
                 'div',
@@ -110,45 +72,22 @@ define(function (require, exports, module) {
                         { className: 'head-left' },
                         React.createElement(
                             'div',
-                            { className: 'head-img' },
+                            { className: 'head-img', style: { marginRight: "35px" } },
                             React.createElement('img', { src: '/images/logo.png', alt: 'logo here', className: 'logo-img' })
                         ),
-                        React.createElement(
-                            'div',
-                            { style: { marginLeft: "35px" }, className: 'head-item' },
-                            React.createElement(
-                                'a',
-                                { href: '#', target: '_blank', className: 'link-item' },
-                                '\u9996\u9875'
-                            )
-                        ),
-                        React.createElement(
-                            'div',
-                            { className: 'head-item' },
-                            React.createElement(
-                                'a',
-                                { href: '#', target: '_blank', className: 'link-item' },
-                                '\u535A\u5BA2'
-                            )
-                        ),
-                        React.createElement(
-                            'div',
-                            { className: 'head-item' },
-                            React.createElement(
-                                'a',
-                                { href: '#', target: '_blank', className: 'link-item' },
-                                '\u76F8\u518C'
-                            )
-                        ),
-                        React.createElement(
-                            'div',
-                            { className: 'head-item' },
-                            React.createElement(
-                                'a',
-                                { href: '#', target: '_blank', className: 'link-item' },
-                                '\u968F\u7B14'
-                            )
-                        )
+                        this.props.list.map(function (item) {
+                            if (!item.phoneOnly) {
+                                return React.createElement(
+                                    'div',
+                                    { className: 'head-item' },
+                                    React.createElement(
+                                        'a',
+                                        { href: item.link, target: '_target', className: 'link-item' },
+                                        item.title
+                                    )
+                                );
+                            }
+                        })
                     ),
                     React.createElement(
                         'div',
@@ -182,7 +121,7 @@ define(function (require, exports, module) {
                         React.createElement(
                             'div',
                             { id: 'btn-menubox', className: 'head-item' },
-                            React.createElement(MenuBtn, null)
+                            React.createElement(MenuBtn, { list: this.props.list })
                         )
                     )
                 )
