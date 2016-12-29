@@ -239,6 +239,29 @@ a:focus {
     line-height: 1;
     text-shadow: 0px 1px 12px #333;
   }
+  .title-box .tag-row {
+    display: flex;
+    margin-top: 5px;
+  }
+  .title-box .small-tag {
+    flex-wrap: nowrap;
+    background: #F5DA55;
+    margin-right: 10px;
+    padding: 2px 5px;
+    border-radius: 3px;
+  }
+  .title-box .author-tag {
+    flex-wrap: nowrap;
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #F5DA55;
+  }
+  .title-box .time-tag {
+    flex-wrap: nowrap;
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #ffffff;
+  }
 }
 @media screen and (max-width: 999px) {
   .title-box {
@@ -263,6 +286,31 @@ a:focus {
     font-size: 17px;
     line-height: 1;
     text-shadow: 0px 1px 12px #333;
+  }
+  .title-box .tag-row {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+    flex-wrap: wrap;
+  }
+  .title-box .small-tag {
+    background: #F5DA55;
+    margin-right: 10px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    display: none;
+  }
+  .title-box .author-tag {
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #F5DA55;
+  }
+  .title-box .time-tag {
+    margin-right: 10px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #ffffff;
   }
 }
 .f-yellow {

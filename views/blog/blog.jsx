@@ -8,7 +8,7 @@ seajs.use(["react", 'react-dom','react-plu','jquery'], function (React, ReactDOM
         $("#header-box")[0]
     );
     ReactDOM.render(
-        <ArticleTitle title="欢迎使用马克飞象" subTitle="专为印象笔记打造的Markdown编辑器" date="1482991078224"/>,
+        <ArticleTitle/>,
         $("#page-banner")[0]
     );
     let target = document.querySelector('.page-banner');

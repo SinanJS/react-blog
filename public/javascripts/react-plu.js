@@ -97,7 +97,8 @@ define(function (require, exports, module) {
                                     { key: item.title, className: 'head-item' },
                                     React.createElement(
                                         'a',
-                                        { href: item.link, target: '_target',
+                                        { href: item.link,
+                                            target: '_target',
                                             className: 'link-item' },
                                         item.title
                                     )
@@ -157,18 +158,17 @@ define(function (require, exports, module) {
                 dataType: "json",
                 success: function (result) {
                     this.setState({
-                        title: result.data.fileName,
-                        date: result.data.createTime,
-                        subTitle: result.data.subTitle
+                        article: result.data
                     });
                 }.bind(this)
             });
         },
         getInitialState: function getInitialState() {
             return {
-                subTitle: "",
-                title: "",
-                date: new Date().getTime()
+                article: {
+                    createTime: new Date().getTime(),
+                    tags: []
+                }
             };
         },
         getDefaultProps: function getDefaultProps() {
@@ -179,12 +179,13 @@ define(function (require, exports, module) {
         render: function render() {
             var dateFormat = "";
             var display = "none";
-            if (+this.state.date) {
-                dateFormat = new Date(+this.state.date).format("yyyy-MM-dd");
+            var _article = this.state.article;
+            if (+_article.createTime) {
+                dateFormat = new Date(+_article.createTime).format("yyyy年MM月dd日");
             } else {
-                console.warn("日期格式错误：", this.state.date);
+                console.warn("日期格式错误：", _article.createTime);
             }
-            if (!!this.state.subTitle) {
+            if (!!_article.subTitle) {
                 display = "block";
             }
             return React.createElement(
@@ -196,7 +197,7 @@ define(function (require, exports, module) {
                     React.createElement(
                         'p',
                         { className: 'banner-title' },
-                        this.state.title
+                        _article.fileName
                     ),
                     React.createElement(
                         'p',
@@ -204,15 +205,28 @@ define(function (require, exports, module) {
                         React.createElement(
                             'span',
                             null,
-                            this.state.subTitle
+                            _article.subTitle
                         )
                     ),
                     React.createElement(
                         'p',
-                        { className: 'date-subtxt f-w' },
+                        { className: 'tag-row' },
+                        _article.tags.map(function (item) {
+                            return React.createElement(
+                                'span',
+                                { key: item, className: 'small-tag' },
+                                item
+                            );
+                        }),
                         React.createElement(
                             'span',
-                            null,
+                            { className: 'author-tag' },
+                            _article.author
+                        ),
+                        React.createElement(
+                            'span',
+                            { className: 'time-tag' },
+                            '\u53D1\u8868\u4E8E',
                             dateFormat
                         )
                     )

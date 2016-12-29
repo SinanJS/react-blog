@@ -1,6 +1,4 @@
 var fs = require("fs");
-var root = "./public/md/";
-var pathConfig = {};
 
 var getConfig = function (cb) {
     var pathConfig = {};
@@ -14,4 +12,3 @@ var getConfig = function (cb) {
     });
 };
 module.exports = getConfig;
-

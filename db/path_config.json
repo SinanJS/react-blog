@@ -4,6 +4,7 @@
     "createTime": 1481516592000,
     "path": "key_word_this.md",
     "author": "司南泰坦",
+    "tags":["this关键词","JavaScript"],
     "subTitle": "理解this关键词后才能好好的敲代码",
     "contents": ""
   },
@@ -11,6 +12,7 @@
     "fileName": "欢迎使用马克飞象",
     "createTime": 1481516592000,
     "path": "test_demo.md",
+    "tags":["markdown","插件"],
     "author": "马克飞象",
     "subTitle": "专为印象笔记打造的Markdown编辑器",
     "contents": ""

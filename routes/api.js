@@ -3,9 +3,7 @@ var router = express.Router();
 var http = require('http');
 var fs = require("fs");
 var getConfig = require('../path_config');
-var Hyper = require("../HyperDown");
-/* GET users listing. */
-var md2Html = new Hyper();
+
 var getQuery = function (urls) {
     try {
         if (urls) {

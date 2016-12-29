@@ -41,7 +41,8 @@ define(function (require, exports, module) {
                         <ul>
                             {
                                 this.props.list.map(function (item) {
-                                    return <li key={item.title}><a href={item.link} target="_blank">{item.title}</a></li>
+                                    return <li key={item.title}><a href={item.link} target="_blank">{item.title}</a>
+                                    </li>
                                 })
                             }
                         </ul>
@@ -77,8 +78,9 @@ define(function (require, exports, module) {
                             {
                                 this.props.list.map(function (item) {
                                     if (!item.phoneOnly) {
-                                        return <div key={item.title} className="head-item"><a href={item.link} target="_target"
-                                                                             className="link-item">{item.title}</a>
+                                        return <div key={item.title} className="head-item"><a href={item.link}
+                                                                                              target="_target"
+                                                                                              className="link-item">{item.title}</a>
                                         </div>
                                     }
                                 })
@@ -108,54 +110,60 @@ define(function (require, exports, module) {
     });
     P.ArticleTitle = React.createClass({
 
-        componentDidMount:function () {
+        componentDidMount: function () {
             $.ajax({
-                url:"/api/articleInfo",
-                data:{
-                    id:location.pathname.split("/")[2]
+                url: "/api/articleInfo",
+                data: {
+                    id: location.pathname.split("/")[2]
                 },
-                dataType:"json",
-                success:function (result) {
+                dataType: "json",
+                success: function (result) {
                     this.setState({
-                        title:result.data.fileName,
-                        date:result.data.createTime,
-                        subTitle:result.data.subTitle
+                        article: result.data,
                     });
                 }.bind(this)
             });
         },
-        getInitialState:function () {
-            return{
-                subTitle:"",
-                title:"",
-                date:new Date().getTime()
+        getInitialState: function () {
+            return {
+                article: {
+                    createTime: new Date().getTime(),
+                    tags:[]
+                }
             }
         },
-        getDefaultProps:function () {
-            return{
-                bgImg:"../images/banner-4.jpg",
+        getDefaultProps: function () {
+            return {
+                bgImg: "../images/banner-4.jpg",
             }
         },
         render: function () {
             let dateFormat = "";
             let display = "none";
-            if(+this.state.date){
-                dateFormat = new Date(+this.state.date).format("yyyy-MM-dd");
-            }else {
-                console.warn("日期格式错误：",this.state.date);
+            let _article = this.state.article;
+            if (+_article.createTime) {
+                dateFormat = new Date(+_article.createTime).format("yyyy年MM月dd日");
+            } else {
+                console.warn("日期格式错误：", _article.createTime);
             }
-            if(!!this.state.subTitle){
+            if (!!_article.subTitle) {
                 display = "block";
             }
             return (
-                <section className="page-banner" style={{backgroundImage:'url('+this.props.bgImg+')'}}>
+                <section className="page-banner" style={{backgroundImage: 'url(' + this.props.bgImg + ')'}}>
                     <div className="title-box">
-                        <p className="banner-title">{this.state.title}</p>
-                        <p className="banner-subtxt f-w" style={{display:display}}>
-                            <span>{this.state.subTitle}</span>
+                        <p className="banner-title">{_article.fileName}</p>
+                        <p className="banner-subtxt f-w" style={{display: display}}>
+                            <span>{_article.subTitle}</span>
                         </p>
-                        <p className="date-subtxt f-w">
-                            <span>{dateFormat}</span>
+                        <p className="tag-row">
+                            {
+                                _article.tags.map(function(item){
+                                    return <span key={item} className="small-tag">{item}</span>
+                                })
+                            }
+                            <span className="author-tag">{_article.author}</span>
+                            <span className="time-tag">发表于{dateFormat}</span>
                         </p>
                     </div>
                 </section>

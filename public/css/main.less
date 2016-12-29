@@ -224,8 +224,8 @@ a:hover, a:focus {
 }
 .title-box {
   width: 100%;
-  @media screen and (min-width: 1000px) {
 
+  @media screen and (min-width: 1000px) {
     height: 230px;
     text-align: left;
     width: 1200px;
@@ -245,6 +245,29 @@ a:hover, a:focus {
       font-size: 17px;
       line-height: 1;
       text-shadow: 0px 1px 12px #333;
+    }
+    .tag-row{
+      display: flex;
+      margin-top:5px;
+    }
+    .small-tag{
+      flex-wrap: nowrap;
+      background: @yellow;
+      margin-right: 10px;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+    .author-tag{
+      flex-wrap: nowrap;
+      padding: 2px 5px;
+      border-radius: 3px;
+      color: @yellow;
+    }
+    .time-tag{
+      flex-wrap: nowrap;
+      padding: 2px 5px;
+      border-radius: 3px;
+      color: #ffffff;
     }
   }
   @media screen and (max-width: 999px) {
@@ -269,6 +292,31 @@ a:hover, a:focus {
       font-size: 17px;
       line-height: 1;
       text-shadow: 0px 1px 12px #333;
+    }
+    .tag-row{
+      margin-top:5px;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 50px;
+      flex-wrap: wrap;
+    }
+    .small-tag{
+      background: @yellow;
+      margin-right: 10px;
+      padding: 2px 5px;
+      border-radius: 3px;
+      display: none;
+    }
+    .author-tag{
+      padding: 2px 5px;
+      border-radius: 3px;
+      color: @yellow;
+    }
+    .time-tag{
+      margin-right: 10px;
+      padding: 2px 5px;
+      border-radius: 3px;
+      color: #ffffff;
     }
   }
 
