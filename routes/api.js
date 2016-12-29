@@ -51,6 +51,7 @@ router.get('/articleInfo', function (req, res, next) {
     }
     getConfig(function (pc) {
         res.send(setSuccessJSON(pc[query.id]));
+        pc = null;
     });
 });
 module.exports = router;

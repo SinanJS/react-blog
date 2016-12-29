@@ -33,6 +33,7 @@ router.get('/**', function (req, res, next) {
             file.html = md2Html.makeHtml(contents.toString());
             res.render('blog/index', file);
         });
+        pc = null;
     });
 });
 module.exports = router;
