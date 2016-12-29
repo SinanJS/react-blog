@@ -1,18 +1,22 @@
 "use strict";
-seajs.use(["react", 'react-dom','react-plu','selector'], function (React, ReactDOM, Plus,$) {
+seajs.use(["react", 'react-dom','react-plu','jquery'], function (React, ReactDOM, Plus,$) {
 
-    var MenuBtn =Plus.MenuBtn;
-    var PageHead = Plus.PageHead;
+    let ArticleTitle =Plus.ArticleTitle;
+    let PageHead = Plus.PageHead;
     ReactDOM.render(
         <PageHead/>,
         $("#header-box")[0]
     );
-    var target = document.querySelector('.banner-box');
+    ReactDOM.render(
+        <ArticleTitle title="欢迎使用马克飞象" subTitle="专为印象笔记打造的Markdown编辑器" date="1482991078224"/>,
+        $("#page-banner")[0]
+    );
+    let target = document.querySelector('.page-banner');
 
     document.addEventListener('scroll', function () {
-        var pageY = document.body.scrollTop || document.documentElement.scrollTop;
+        let pageY = document.body.scrollTop || document.documentElement.scrollTop;
         if(pageY>540){return;}
-        var offset = pageY / 3;
+        let offset = pageY / 2;
         target.style.backgroundPosition = "center " + offset + "px";
     });
 });

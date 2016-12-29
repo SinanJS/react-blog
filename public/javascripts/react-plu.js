@@ -3,9 +3,24 @@
 define(function (require, exports, module) {
     var React = require('react');
     var ReactDOM = require('react-dom');
-    var $ = require("selector");
+    var $ = require('jquery');
     var P = {};
-
+    Date.prototype.format = function (fmt) {
+        //author: meizz
+        var o = {
+            "M+": this.getMonth() + 1, //月份
+            "d+": this.getDate(), //日
+            "h+": this.getHours(), //小时
+            "m+": this.getMinutes(), //分
+            "s+": this.getSeconds(), //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds() //毫秒
+        };
+        if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o) {
+            if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
+        }return fmt;
+    };
     P.MenuBtn = React.createClass({
         displayName: 'MenuBtn',
 
@@ -22,7 +37,6 @@ define(function (require, exports, module) {
         render: function render() {
             var display = this.state.display ? "block" : "none";
             var height = document.body.clientHeight + "px";
-            console.log(this.props);
             return React.createElement(
                 'div',
                 null,
@@ -36,7 +50,7 @@ define(function (require, exports, module) {
                         this.props.list.map(function (item) {
                             return React.createElement(
                                 'li',
-                                null,
+                                { key: item.title },
                                 React.createElement(
                                     'a',
                                     { href: item.link, target: '_blank' },
@@ -46,7 +60,8 @@ define(function (require, exports, module) {
                         })
                     )
                 ),
-                React.createElement('div', { className: 'btn-bg', style: { height: height, display: display }, ref: 'btnBg', onClick: this.handleClick })
+                React.createElement('div', { className: 'btn-bg', style: { height: height, display: display }, ref: 'btnBg',
+                    onClick: this.handleClick })
             );
         }
     });
@@ -79,10 +94,11 @@ define(function (require, exports, module) {
                             if (!item.phoneOnly) {
                                 return React.createElement(
                                     'div',
-                                    { className: 'head-item' },
+                                    { key: item.title, className: 'head-item' },
                                     React.createElement(
                                         'a',
-                                        { href: item.link, target: '_target', className: 'link-item' },
+                                        { href: item.link, target: '_target',
+                                            className: 'link-item' },
                                         item.title
                                     )
                                 );
@@ -122,6 +138,82 @@ define(function (require, exports, module) {
                             'div',
                             { id: 'btn-menubox', className: 'head-item' },
                             React.createElement(MenuBtn, { list: this.props.list })
+                        )
+                    )
+                )
+            );
+        }
+    });
+    P.ArticleTitle = React.createClass({
+        displayName: 'ArticleTitle',
+
+
+        componentDidMount: function componentDidMount() {
+            $.ajax({
+                url: "/api/articleInfo",
+                data: {
+                    id: location.pathname.split("/")[2]
+                },
+                dataType: "json",
+                success: function (result) {
+                    this.setState({
+                        title: result.data.fileName,
+                        date: result.data.createTime,
+                        subTitle: result.data.subTitle
+                    });
+                }.bind(this)
+            });
+        },
+        getInitialState: function getInitialState() {
+            return {
+                subTitle: "",
+                title: "",
+                date: new Date().getTime()
+            };
+        },
+        getDefaultProps: function getDefaultProps() {
+            return {
+                bgImg: "../images/banner-4.jpg"
+            };
+        },
+        render: function render() {
+            var dateFormat = "";
+            var display = "none";
+            if (+this.state.date) {
+                dateFormat = new Date(+this.state.date).format("yyyy-MM-dd");
+            } else {
+                console.warn("日期格式错误：", this.state.date);
+            }
+            if (!!this.state.subTitle) {
+                display = "block";
+            }
+            return React.createElement(
+                'section',
+                { className: 'page-banner', style: { backgroundImage: 'url(' + this.props.bgImg + ')' } },
+                React.createElement(
+                    'div',
+                    { className: 'title-box' },
+                    React.createElement(
+                        'p',
+                        { className: 'banner-title' },
+                        this.state.title
+                    ),
+                    React.createElement(
+                        'p',
+                        { className: 'banner-subtxt f-w', style: { display: display } },
+                        React.createElement(
+                            'span',
+                            null,
+                            this.state.subTitle
+                        )
+                    ),
+                    React.createElement(
+                        'p',
+                        { className: 'date-subtxt f-w' },
+                        React.createElement(
+                            'span',
+                            null,
+                            dateFormat
                         )
                     )
                 )

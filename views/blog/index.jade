@@ -3,6 +3,8 @@ html(lang="en")
     head
         title Welcome SinanBlog!
         meta(charset="UTF-8")
+        link(rel="shortcut icon" href="./images/icon.ico")
+        link(rel="apple-touch-icon-precomposed" href="./images/apple-touch-icon.png")
         link(rel="stylesheet", href="/css/main.css")
         link(rel="stylesheet", href="/css/prism.css")
         meta(name="viewport", content="width=device-width, initial-scale=1")
@@ -10,10 +12,8 @@ html(lang="en")
         script(src="/javascripts/sea.js")
     body
         div#header-box
-        section.page-banner
-            .banner-box
-                p.banner-title Welcome Titan Blog !
-                p.banner-subtxt.f-w 一个简约的网站
+        section#page-banner
+
         section.page-body.content-box
             //p #{fileName}#{createTime}
             div.md-preview !{html}

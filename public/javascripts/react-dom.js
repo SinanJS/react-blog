@@ -19,7 +19,6 @@
   } else if (typeof define === "function" && define.cmd) {
     define(function (require, exports, module) {
       var React = require('react');
-      console.log("23",typeof React.__SECRET_DOM_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.render);
       module.exports = React.__SECRET_DOM_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
     });
 

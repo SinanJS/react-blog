@@ -1,10 +1,10 @@
 "use strict";
 seajs.use(["react", 'react-dom', 'react-plu', 'selector'], function (React, ReactDOM, Plus, $) {
-    var MenuBtn = Plus.MenuBtn;
-    var PageHead = Plus.PageHead;
-    var LikeButton = React.createClass({
+    let MenuBtn = Plus.MenuBtn;
+    let PageHead = Plus.PageHead;
+    let LikeButton = React.createClass({
         getInitialState: function () {
-            var init = {
+            let init = {
                 liked: false,
                 test: "sdf",
                 nihao: "hello"
@@ -15,7 +15,7 @@ seajs.use(["react", 'react-dom', 'react-plu', 'selector'], function (React, Reac
             this.setState({liked: !this.state.liked});
         },
         render: function () {
-            var text = this.state.liked ? 'like' : 'haven\'t liked';
+            let text = this.state.liked ? 'like' : 'haven\'t liked';
             return (
                 <p onClick={this.handleClick}>
                     You {text} this. Click to toggle.{this.state.nihao}
@@ -36,13 +36,13 @@ seajs.use(["react", 'react-dom', 'react-plu', 'selector'], function (React, Reac
      $("#btn-menubox")[0]
      );*/
 
-    var target = document.querySelector('.banner-box');
+    let target = document.querySelector('.page-banner');
     document.addEventListener('scroll', function () {
-        var pageY = document.body.scrollTop || document.documentElement.scrollTop;
+        let pageY = document.body.scrollTop || document.documentElement.scrollTop;
         if (pageY > 540) {
             return;
         }
-        var offset = pageY / 3;
+        let offset = pageY / 3;
         target.style.backgroundPosition = "center " + offset + "px";
     });
 });

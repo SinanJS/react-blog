@@ -176,15 +176,17 @@ a:hover, a:focus {
 }
 
 //banner部分
+.page-banner{
+  background-size: 100%;
+  background-position: center 0;
+  background-image: url(../images/banner-2.jpg);
+  background-repeat: repeat;
+}
 .banner-box {
   width: 100%;
-  background-image: url(../images/banner-2.jpg);
   @media screen and (min-width: 1000px) {
-    height: 450px;
-    background-size: 100%;
-    background-position: center 0;
-    background-repeat: repeat;
     text-align: center;
+    height: 450px;
     .banner-title {
       color: @yellow;
       font-size: 57px;
@@ -216,6 +218,57 @@ a:hover, a:focus {
       padding-top: 10px;
       text-shadow: 0px 1px 12px #333;
       padding-bottom: 51px;
+    }
+  }
+
+}
+.title-box {
+  width: 100%;
+  @media screen and (min-width: 1000px) {
+
+    height: 230px;
+    text-align: left;
+    width: 1200px;
+    margin: 0 auto;
+    .banner-title {
+      color: @yellow;
+      font-size: 37px;
+      padding-top: 60px;
+      text-shadow: 0px 1px 12px #333;
+    }
+    .banner-subtxt{
+      font-size: 20px;
+      text-shadow: 0px 1px 12px #333;
+      line-height: 2;
+    }
+    .date-subtxt {
+      font-size: 17px;
+      line-height: 1;
+      text-shadow: 0px 1px 12px #333;
+    }
+  }
+  @media screen and (max-width: 999px) {
+    background-size: 100%;
+    background-position: center 0;
+    background-repeat: repeat;
+    text-align: center;
+    .banner-title {
+      color: @yellow;
+      font-size: 26px;
+      text-shadow: 0px 1px 12px #333;
+      padding-top: 32px;
+      padding-bottom: 4px;
+    }
+
+    .banner-subtxt{
+      font-size: 20px;
+      text-shadow: 0px 1px 12px #333;
+      line-height: 2;
+    }
+    .date-subtxt {
+      font-size: 17px;
+      line-height: 1;
+      text-shadow: 0px 1px 12px #333;
     }
   }
 

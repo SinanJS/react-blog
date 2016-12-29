@@ -39,7 +39,7 @@ seajs.use(["react", 'react-dom', 'react-plu', 'selector'], function (React, Reac
      $("#btn-menubox")[0]
      );*/
 
-    var target = document.querySelector('.banner-box');
+    var target = document.querySelector('.page-banner');
     document.addEventListener('scroll', function () {
         var pageY = document.body.scrollTop || document.documentElement.scrollTop;
         if (pageY > 540) {
