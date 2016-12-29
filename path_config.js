@@ -9,6 +9,7 @@ var getConfig = function (cb) {
         }
         pathConfig = JSON.parse(contents.toString());
         cb(pathConfig);
+        pathConfig = null;
     });
 };
 module.exports = getConfig;
