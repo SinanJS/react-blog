@@ -11,7 +11,6 @@ var getConfig = function (cb) {
         }
         pathConfig = JSON.parse(contents.toString());
         cb(pathConfig);
-        console.log(pathConfig);
     });
 };
 module.exports = getConfig;
