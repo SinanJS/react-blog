@@ -212,12 +212,16 @@ define(function (require, exports, module) {
                             </div>
                         </div>
                     </div>
+                    <p className="logo-fff">
+                        <img src="/images/logo-fff.png" alt="" />
+                    </p>
                     <p className="cpr">
                         Copyright © 2011-2017 TitanBlog
                     </p>
-                    <p style={{textAlign:"center"}}>
+                    <p style={{textAlign:"center"}} className="ICP">
                         京ICP备11008151号
                     </p>
+
                 </div>
             );
         }

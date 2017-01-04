@@ -477,20 +477,36 @@ a:focus {
   .foot-box .about-title {
     font-size: 1.3rem;
   }
+  .foot-box .logo-fff {
+    display: none;
+  }
 }
 @media screen and (max-width: 1000px) {
   .foot-box .cpr {
     text-align: center;
+    font-size: 1rem;
   }
-  .foot-box .foot-logo img {
-    width: 155px;
+  .foot-box .ICP {
+    font-size: 1rem;
+  }
+  .foot-box .logo-fff {
+    text-align: center;
+  }
+  .foot-box .logo-fff img {
+    width: 120px;
+  }
+  .foot-box .foot-logo {
+    display: none;
+  }
+  .foot-box .placeholder {
+    display: none;
   }
   .foot-box .foot-about {
-    display: flex;
-    margin-top: 20px;
+    display: none;
   }
   .foot-box .foot-about .about-gp {
     text-align: center;
+    width: 50%;
   }
   .foot-box .foot-about .about-gp ul {
     padding: 0;

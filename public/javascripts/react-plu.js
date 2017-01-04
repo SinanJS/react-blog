@@ -314,12 +314,17 @@ define(function (require, exports, module) {
                 ),
                 React.createElement(
                     'p',
+                    { className: 'logo-fff' },
+                    React.createElement('img', { src: '/images/logo-fff.png', alt: '' })
+                ),
+                React.createElement(
+                    'p',
                     { className: 'cpr' },
                     'Copyright \xA9 2011-2017 TitanBlog'
                 ),
                 React.createElement(
                     'p',
-                    { style: { textAlign: "center" } },
+                    { style: { textAlign: "center" }, className: 'ICP' },
                     '\u4EACICP\u590711008151\u53F7'
                 )
             );

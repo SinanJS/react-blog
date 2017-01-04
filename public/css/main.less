@@ -2,7 +2,7 @@
 @yellow: #F5DA55;
 @blue: #337ab7;
 @deep-blue: #23527c;
-@d-yellow:#f0ad4e;
+@d-yellow: #f0ad4e;
 html, body, p {
   font-family: Consolas, Microsoft YaHei, Source Code Pro, Menlo, Monaco, Courier New, monospace;
   font-size: 12px;
@@ -10,10 +10,12 @@ html, body, p {
   margin: 0px;
   padding: 0px;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 a {
   color: @blue;
   text-decoration: none;
@@ -25,14 +27,16 @@ a:hover, a:focus {
 }
 
 /*--页首部分--*/
-#header-box{
+#header-box {
   position: fixed;
   width: 100%;
   top: 0;
 }
-.page-banner{
+
+.page-banner {
   margin-top: 47px;
 }
+
 .page-head {
   flex-wrap: nowrap;
   background-color: @yellow;
@@ -176,12 +180,13 @@ a:hover, a:focus {
 }
 
 //banner部分
-.page-banner{
+.page-banner {
   background-size: 100%;
   background-position: center 0;
   background-image: url(../images/banner-2.jpg);
   background-repeat: repeat;
 }
+
 .banner-box {
   width: 100%;
   @media screen and (min-width: 1000px) {
@@ -222,6 +227,7 @@ a:hover, a:focus {
   }
 
 }
+
 .title-box {
   width: 100%;
 
@@ -236,34 +242,40 @@ a:hover, a:focus {
       padding-top: 60px;
       text-shadow: 0px 1px 12px #333;
     }
-    .banner-subtxt{
+
+    .banner-subtxt {
       font-size: 20px;
       text-shadow: 0px 1px 12px #333;
       line-height: 2;
     }
+
     .date-subtxt {
       font-size: 17px;
       line-height: 1;
       text-shadow: 0px 1px 12px #333;
     }
-    .tag-row{
+
+    .tag-row {
       display: flex;
-      margin-top:5px;
+      margin-top: 5px;
     }
-    .small-tag{
+
+    .small-tag {
       flex-wrap: nowrap;
       background: @yellow;
       margin-right: 10px;
       padding: 2px 5px;
       border-radius: 3px;
     }
-    .author-tag{
+
+    .author-tag {
       flex-wrap: nowrap;
       padding: 2px 5px;
       border-radius: 3px;
       color: @yellow;
     }
-    .time-tag{
+
+    .time-tag {
       flex-wrap: nowrap;
       padding: 2px 5px;
       border-radius: 3px;
@@ -283,36 +295,41 @@ a:hover, a:focus {
       padding-bottom: 4px;
     }
 
-    .banner-subtxt{
+    .banner-subtxt {
       font-size: 20px;
       text-shadow: 0px 1px 12px #333;
       line-height: 2;
     }
+
     .date-subtxt {
       font-size: 17px;
       line-height: 1;
       text-shadow: 0px 1px 12px #333;
     }
-    .tag-row{
-      margin-top:5px;
+
+    .tag-row {
+      margin-top: 5px;
       display: flex;
       justify-content: center;
       padding-bottom: 50px;
       flex-wrap: wrap;
     }
-    .small-tag{
+
+    .small-tag {
       background: @yellow;
       margin-right: 10px;
       padding: 2px 5px;
       border-radius: 3px;
       display: none;
     }
-    .author-tag{
+
+    .author-tag {
       padding: 2px 5px;
       border-radius: 3px;
       color: @yellow;
     }
-    .time-tag{
+
+    .time-tag {
       margin-right: 10px;
       padding: 2px 5px;
       border-radius: 3px;
@@ -330,32 +347,34 @@ a:hover, a:focus {
   color: #fff;
 }
 
-.page-body{
-  @media screen and (min-width: 1000px){
+.page-body {
+  @media screen and (min-width: 1000px) {
     display: flex;
-    .md-preview{
+    .md-preview {
       width: 800px;
       flex-wrap: nowrap;
     }
-    .bd-other{
+
+    .bd-other {
       flex-wrap: nowrap;
       width: 400px;
     }
   }
-  @media screen and (max-width: 1000px){
+  @media screen and (max-width: 1000px) {
     display: block;
-    .bd-other{
+    .bd-other {
       display: none;
     }
   }
 }
+
 //md文章内容
 .md-preview {
   font-size: 1.2rem;
-  hr{
-    background-color:#E6E6E6;
+  hr {
+    background-color: #E6E6E6;
     height: 1px;
-    border:0px;
+    border: 0px;
   }
   h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
@@ -407,63 +426,69 @@ a:hover, a:focus {
     font-size: 1.2rem;
     line-height: 1.7;
   }
-  img{
+  img {
     display: block;
     max-width: 100%;
   }
-  table{
+  table {
     width: 100%;
-    border:1px solid #E6E6E6;
-    thead{
+    border: 1px solid #E6E6E6;
+    thead {
       background: #eeeeee;
     }
 
-    tr{
+    tr {
       line-height: 1.6;
-      th,td{
-        border:1px solid #E6E6E6;
+      th, td {
+        border: 1px solid #E6E6E6;
         padding: 10px;
       }
     }
   }
 }
+
 //foot
-.page-foot{
+.page-foot {
   background-color: #383D41;
   margin-top: 15px;
-  div,p,a{
+  div, p, a {
     color: #fff;
     font-size: 1.2rem;
     line-height: 1.6;
   }
 }
-.foot-box{
+
+.foot-box {
   padding: 15px;
 
-  @media screen and (min-width: 1000px){
-    .flex-box{
+  @media screen and (min-width: 1000px) {
+    .flex-box {
       width: 100%;
       display: flex;
     }
-    .foot-logo{
+
+    .foot-logo {
       width: 40%;
       img {
         width: 155px;
       }
     }
-    .placeholder{
+
+    .placeholder {
       width: 30%;
     }
-    .foot-about{
+
+    .foot-about {
       display: flex;
     }
-    .about-gp{
+
+    .about-gp {
       text-align: center;
-      ul{
+      ul {
         padding: 0;
         margin: 0;
         margin-top: 10px;
-        li{
+        li {
           float: left;
           list-style: none;
           margin: 0 10px;
@@ -471,28 +496,47 @@ a:hover, a:focus {
         }
       }
     }
-    .aliyun{
+
+    .aliyun {
       width: 180px;
       margin-top: 6px;
     }
-    .about-title{
+
+    .about-title {
       font-size: 1.3rem;
+    }
+    .logo-fff{
+      display: none;
     }
   }
   @media screen and (max-width: 1000px) {
-    .cpr{
+    .cpr {
       text-align: center;
+      font-size: 1rem;
     }
-    .foot-logo{
+    .ICP{
+      font-size: 1rem;
+    }
+    .logo-fff {
+      text-align: center;
       img {
-        width: 155px;
+        width: 120px;
       }
     }
-    .foot-about{
-      display: flex;
-      margin-top: 20px;
+
+    .foot-logo {
+      display: none;
+    }
+
+    .placeholder {
+      display: none;
+    }
+
+    .foot-about {
+      display: none;
       .about-gp {
         text-align: center;
+        width: 50%;
         ul {
           padding: 0;
           margin: 0;
@@ -501,13 +545,13 @@ a:hover, a:focus {
             list-style: none;
             float: left;
             margin: 0 10px;
-            img{
+            img {
               width: 30px;
             }
           }
         }
       }
-      .aliyun{
+      .aliyun {
         width: 140px;
       }
 
