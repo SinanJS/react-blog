@@ -427,3 +427,90 @@ a:hover, a:focus {
     }
   }
 }
+//foot
+.page-foot{
+  background-color: #383D41;
+  margin-top: 15px;
+  div,p,a{
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+}
+.foot-box{
+  padding: 15px;
+
+  @media screen and (min-width: 1000px){
+    .flex-box{
+      width: 100%;
+      display: flex;
+    }
+    .foot-logo{
+      width: 40%;
+      img {
+        width: 155px;
+      }
+    }
+    .placeholder{
+      width: 30%;
+    }
+    .foot-about{
+      display: flex;
+    }
+    .about-gp{
+      text-align: center;
+      ul{
+        padding: 0;
+        margin: 0;
+        margin-top: 10px;
+        li{
+          float: left;
+          list-style: none;
+          margin: 0 10px;
+          cursor: pointer;
+        }
+      }
+    }
+    .aliyun{
+      width: 180px;
+      margin-top: 6px;
+    }
+    .about-title{
+      font-size: 1.3rem;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .cpr{
+      text-align: center;
+    }
+    .foot-logo{
+      img {
+        width: 155px;
+      }
+    }
+    .foot-about{
+      display: flex;
+      margin-top: 20px;
+      .about-gp {
+        text-align: center;
+        ul {
+          padding: 0;
+          margin: 0;
+          li {
+            padding: 0;
+            list-style: none;
+            float: left;
+            margin: 0 10px;
+            img{
+              width: 30px;
+            }
+          }
+        }
+      }
+      .aliyun{
+        width: 140px;
+      }
+
+    }
+  }
+}

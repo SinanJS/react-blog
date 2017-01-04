@@ -3,6 +3,7 @@ seajs.use(["react", 'react-dom','react-plu','jquery'], function (React, ReactDOM
 
     let ArticleTitle =Plus.ArticleTitle;
     let PageHead = Plus.PageHead;
+    let Foot = Plus.PageFoot;
     ReactDOM.render(
         <PageHead/>,
         $("#header-box")[0]
@@ -10,6 +11,10 @@ seajs.use(["react", 'react-dom','react-plu','jquery'], function (React, ReactDOM
     ReactDOM.render(
         <ArticleTitle/>,
         $("#page-banner")[0]
+    );
+    ReactDOM.render(
+        <Foot/>,
+        $(".page-foot")[0]
     );
     let target = document.querySelector('.page-banner');
 

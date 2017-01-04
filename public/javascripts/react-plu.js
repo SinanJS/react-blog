@@ -65,7 +65,9 @@ define(function (require, exports, module) {
             );
         }
     });
+
     var MenuBtn = P.MenuBtn;
+
     P.PageHead = React.createClass({
         displayName: 'PageHead',
 
@@ -145,6 +147,7 @@ define(function (require, exports, module) {
             );
         }
     });
+
     P.ArticleTitle = React.createClass({
         displayName: 'ArticleTitle',
 
@@ -230,6 +233,94 @@ define(function (require, exports, module) {
                             dateFormat
                         )
                     )
+                )
+            );
+        }
+    });
+
+    P.PageFoot = React.createClass({
+        displayName: 'PageFoot',
+
+        render: function render() {
+            return React.createElement(
+                'div',
+                { className: 'foot-box content-box' },
+                React.createElement(
+                    'div',
+                    { className: 'flex-box' },
+                    React.createElement(
+                        'div',
+                        { className: 'foot-logo' },
+                        React.createElement('img', { src: '/images/logo-fff.png', alt: '' }),
+                        React.createElement(
+                            'p',
+                            null,
+                            '\u9664\u7279\u522B\u8BF4\u660E\u5916\uFF0C\u672C\u7AD9\u5185\u5BB9\u5747\u91C7\u7528',
+                            React.createElement(
+                                'a',
+                                { href: 'https://creativecommons.org/licenses/by-sa/3.0/cn/', target: '_blank' },
+                                '\u77E5\u8BC6\u5171\u4EAB\u7F72\u540D-\u76F8\u540C\u65B9\u5F0F\u5171\u4EAB 3.0 \u4E2D\u56FD\u5927\u9646\u8BB8\u53EF\u534F\u8BAE'
+                            ),
+                            ' \u8FDB\u884C\u8BB8\u53EF'
+                        )
+                    ),
+                    React.createElement('div', { className: 'placeholder' }),
+                    React.createElement(
+                        'div',
+                        { className: 'foot-about' },
+                        React.createElement(
+                            'div',
+                            { className: 'about-gp' },
+                            React.createElement(
+                                'div',
+                                { className: 'about-title' },
+                                '\u8054\u7CFB\u4F5C\u8005'
+                            ),
+                            React.createElement(
+                                'ul',
+                                null,
+                                React.createElement(
+                                    'li',
+                                    null,
+                                    React.createElement('img', { src: '/images/icon/wechat.png', alt: '' })
+                                ),
+                                React.createElement(
+                                    'li',
+                                    null,
+                                    React.createElement('img', { src: '/images/icon/weibo.png', alt: '' })
+                                ),
+                                React.createElement(
+                                    'li',
+                                    null,
+                                    React.createElement('img', { src: '/images/icon/github.png', alt: '' })
+                                )
+                            )
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'about-gp' },
+                            React.createElement(
+                                'div',
+                                { className: 'about-title' },
+                                '\u5173\u4E8E\u672C\u7AD9'
+                            ),
+                            React.createElement(
+                                'a',
+                                { href: '' },
+                                React.createElement('img', { className: 'aliyun', src: '/images/aliyun.png', alt: '' })
+                            )
+                        )
+                    )
+                ),
+                React.createElement(
+                    'p',
+                    { className: 'cpr' },
+                    'Copyright \xA9 2011-2017 TitanBlog'
+                ),
+                React.createElement(
+                    'p',
+                    { style: { textAlign: "center" } },
+                    '\u4EACICP\u590711008151\u53F7'
                 )
             );
         }

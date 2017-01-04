@@ -425,3 +425,87 @@ a:focus {
   border: 1px solid #E6E6E6;
   padding: 10px;
 }
+.page-foot {
+  background-color: #383D41;
+  margin-top: 15px;
+}
+.page-foot div,
+.page-foot p,
+.page-foot a {
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+.foot-box {
+  padding: 15px;
+}
+@media screen and (min-width: 1000px) {
+  .foot-box .flex-box {
+    width: 100%;
+    display: flex;
+  }
+  .foot-box .foot-logo {
+    width: 40%;
+  }
+  .foot-box .foot-logo img {
+    width: 155px;
+  }
+  .foot-box .placeholder {
+    width: 30%;
+  }
+  .foot-box .foot-about {
+    display: flex;
+  }
+  .foot-box .about-gp {
+    text-align: center;
+  }
+  .foot-box .about-gp ul {
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+  }
+  .foot-box .about-gp ul li {
+    float: left;
+    list-style: none;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  .foot-box .aliyun {
+    width: 180px;
+    margin-top: 6px;
+  }
+  .foot-box .about-title {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .foot-box .cpr {
+    text-align: center;
+  }
+  .foot-box .foot-logo img {
+    width: 155px;
+  }
+  .foot-box .foot-about {
+    display: flex;
+    margin-top: 20px;
+  }
+  .foot-box .foot-about .about-gp {
+    text-align: center;
+  }
+  .foot-box .foot-about .about-gp ul {
+    padding: 0;
+    margin: 0;
+  }
+  .foot-box .foot-about .about-gp ul li {
+    padding: 0;
+    list-style: none;
+    float: left;
+    margin: 0 10px;
+  }
+  .foot-box .foot-about .about-gp ul li img {
+    width: 30px;
+  }
+  .foot-box .foot-about .aliyun {
+    width: 140px;
+  }
+}

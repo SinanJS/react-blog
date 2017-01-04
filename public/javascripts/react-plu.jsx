@@ -53,7 +53,9 @@ define(function (require, exports, module) {
             );
         }
     });
+
     let MenuBtn = P.MenuBtn;
+
     P.PageHead = React.createClass({
         getDefaultProps: function () {
             let routes = {
@@ -108,6 +110,7 @@ define(function (require, exports, module) {
             );
         }
     });
+
     P.ArticleTitle = React.createClass({
 
         componentDidMount: function () {
@@ -167,6 +170,55 @@ define(function (require, exports, module) {
                         </p>
                     </div>
                 </section>
+            );
+        }
+    });
+
+    P.PageFoot = React.createClass({
+        render:function () {
+            return (
+                <div className="foot-box content-box">
+                    <div className="flex-box">
+                        <div className="foot-logo">
+                            <img src="/images/logo-fff.png" alt=""/>
+                            <p>
+                                除特别说明外，本站内容均采用
+                                <a href="https://creativecommons.org/licenses/by-sa/3.0/cn/" target="_blank">知识共享署名-相同方式共享 3.0 中国大陆许可协议</a> 进行许可
+                            </p>
+                        </div>
+                        <div className="placeholder"></div>
+                        <div className="foot-about">
+                            <div className="about-gp">
+                                 <div className="about-title">
+                                    联系作者
+                                 </div>
+                                 <ul>
+                                     <li>
+                                         <img src="/images/icon/wechat.png" alt=""/>
+                                     </li>
+                                     <li>
+                                         <img src="/images/icon/weibo.png" alt=""/>
+                                     </li>
+                                     <li>
+                                         <img src="/images/icon/github.png" alt=""/>
+                                     </li>
+                                 </ul>
+                            </div>
+                            <div className="about-gp">
+                                 <div className="about-title">
+                                    关于本站
+                                 </div>
+                                <a href=""><img className="aliyun" src="/images/aliyun.png" alt=""/></a>
+                            </div>
+                        </div>
+                    </div>
+                    <p className="cpr">
+                        Copyright © 2011-2017 TitanBlog
+                    </p>
+                    <p style={{textAlign:"center"}}>
+                        京ICP备11008151号
+                    </p>
+                </div>
             );
         }
     });
