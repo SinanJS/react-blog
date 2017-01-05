@@ -258,10 +258,10 @@ define(function (require, exports, module) {
                             '\u9664\u7279\u522B\u8BF4\u660E\u5916\uFF0C\u672C\u7AD9\u5185\u5BB9\u5747\u91C7\u7528',
                             React.createElement(
                                 'a',
-                                { href: 'https://creativecommons.org/licenses/by-sa/3.0/cn/', target: '_blank' },
-                                '\u77E5\u8BC6\u5171\u4EAB\u7F72\u540D-\u76F8\u540C\u65B9\u5F0F\u5171\u4EAB 3.0 \u4E2D\u56FD\u5927\u9646\u8BB8\u53EF\u534F\u8BAE'
+                                { href: 'https://creativecommons.org/licenses/by-nd/3.0/cn/deed.zh', target: '_blank' },
+                                ' \u77E5\u8BC6\u5171\u4EAB"\u7F72\u540D-\u7981\u6B62\u6F14\u7ECE 3.0 \u4E2D\u56FD\u5927\u9646"\u8BB8\u53EF\u534F\u8BAE'
                             ),
-                            ' \u8FDB\u884C\u8BB8\u53EF'
+                            ' \u6388\u6743'
                         )
                     ),
                     React.createElement('div', { className: 'placeholder' }),
@@ -320,7 +320,9 @@ define(function (require, exports, module) {
                 React.createElement(
                     'p',
                     { className: 'cpr' },
-                    'Copyright \xA9 2011-2017 TitanBlog'
+                    'Copyright \xA9 2016-',
+                    new Date().getFullYear(),
+                    ' TitanBlog'
                 ),
                 React.createElement(
                     'p',

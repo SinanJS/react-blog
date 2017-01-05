@@ -183,7 +183,7 @@ define(function (require, exports, module) {
                             <img src="/images/logo-fff.png" alt=""/>
                             <p>
                                 除特别说明外，本站内容均采用
-                                <a href="https://creativecommons.org/licenses/by-sa/3.0/cn/" target="_blank">知识共享署名-相同方式共享 3.0 中国大陆许可协议</a> 进行许可
+                                <a href="https://creativecommons.org/licenses/by-nd/3.0/cn/deed.zh" target="_blank"> 知识共享"署名-禁止演绎 3.0 中国大陆"许可协议</a> 授权
                             </p>
                         </div>
                         <div className="placeholder"></div>
@@ -216,7 +216,7 @@ define(function (require, exports, module) {
                         <img src="/images/logo-fff.png" alt="" />
                     </p>
                     <p className="cpr">
-                        Copyright © 2011-2017 TitanBlog
+                        Copyright © 2016-{new Date().getFullYear()} TitanBlog
                     </p>
                     <p style={{textAlign:"center"}} className="ICP">
                         京ICP备11008151号
