@@ -572,9 +572,9 @@ a:focus {
 }
 @media screen and (min-width: 1000px) {
   .article-list .article-gist img {
-    max-width: 150px;
-    min-width: 150px;
-    min-height: 120px;
+    width: 200px;
+    max-height: 150px;
+    min-height: 80px;
     margin: 5px 10px 10px 0;
   }
 }
