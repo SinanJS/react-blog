@@ -1,4 +1,3 @@
-# 【JavaScript】`call`与`apply`兄弟列传
 > 在JavaScript中，有这么俩货，一个叫call,一个叫apply，它们俩工作几乎一毛一样，但是也有所区别，曾经对这个知识点非常困惑，看过几篇博客也没搞清楚这哥俩到底打算要干个啥，直到某天仔细研究过`this`关键词的相关知识点后，才恍然大悟，
 >![恍然大悟](https://github.com/SinanJS/sinan-blog/blob/master/img/kenan.jpg?raw=true)
 >这篇文章主要就是为`call`和`apply`兄弟俩写“人物传记”，希望能帮助到其他对这个问题有困惑的童鞋。
