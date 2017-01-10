@@ -21,6 +21,7 @@ define(function (require, exports, module) {
             if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
         }return fmt;
     };
+
     P.MenuBtn = React.createClass({
         displayName: 'MenuBtn',
 
@@ -73,7 +74,7 @@ define(function (require, exports, module) {
 
         getDefaultProps: function getDefaultProps() {
             var routes = {
-                list: [{ title: "首页", link: "/index" }, { title: "博客", link: "/blog" }, { title: "随笔", link: "#" }, { title: "相册", link: "#" }, { title: "GitHub", link: "https://github.com/SinanJS/sinan-blog", phoneOnly: true }]
+                list: [{ title: "首页", link: "/index" }, { title: "JavaScript", link: "/index" }, { title: "Git相关", link: "/index" }, { title: "随笔", link: "#" }, { title: "GitHub", link: "https://github.com/SinanJS/sinan-blog", phoneOnly: true }]
             };
             return routes;
         },
@@ -259,7 +260,7 @@ define(function (require, exports, module) {
                             React.createElement(
                                 'a',
                                 { href: 'https://creativecommons.org/licenses/by-nd/3.0/cn/deed.zh', target: '_blank' },
-                                ' \u77E5\u8BC6\u5171\u4EAB"\u7F72\u540D-\u7981\u6B62\u6F14\u7ECE 3.0 \u4E2D\u56FD\u5927\u9646"\u8BB8\u53EF\u534F\u8BAE'
+                                '\u77E5\u8BC6\u5171\u4EAB"\u7F72\u540D-\u7981\u6B62\u6F14\u7ECE 3.0 \u4E2D\u56FD\u5927\u9646"\u8BB8\u53EF\u534F\u8BAE'
                             ),
                             ' \u6388\u6743'
                         )
@@ -327,8 +328,83 @@ define(function (require, exports, module) {
                 React.createElement(
                     'p',
                     { style: { textAlign: "center" }, className: 'ICP' },
-                    '\u4EACICP\u590711008151\u53F7'
+                    '\u9C81ICP\u590711008151\u53F7'
                 )
+            );
+        }
+    });
+
+    P.ArticleList = React.createClass({
+        displayName: 'ArticleList',
+
+        componentDidMount: function componentDidMount() {
+            $.ajax({
+                url: "/api/articles/list",
+                dataType: "json",
+                success: function (result) {
+                    if (result.success === 1) {
+                        this.setState({ articles: result.data.list });
+                    }
+                }.bind(this)
+            });
+        },
+        getInitialState: function getInitialState() {
+            return {
+                articles: []
+            };
+        },
+        render: function render() {
+            return React.createElement(
+                'div',
+                { className: 'index-body' },
+                React.createElement(
+                    'div',
+                    { className: 'article-list' },
+                    this.state.articles.map(function (item) {
+                        var href = "/blog/" + item.key;
+                        var imageShow = "none";
+                        if (!!item.image) {
+                            imageShow = "block";
+                        }
+                        return React.createElement(
+                            'div',
+                            { className: 'list-item', key: item.key },
+                            React.createElement(
+                                'div',
+                                { className: 'article-title' },
+                                React.createElement(
+                                    'a',
+                                    { href: href, target: '_blank', className: 'article-a' },
+                                    item.fileName
+                                )
+                            ),
+                            React.createElement(
+                                'div',
+                                { className: 'article-gist' },
+                                React.createElement('img', { src: item.image, style: { display: imageShow } }),
+                                item.gist,
+                                '\u2026'
+                            ),
+                            React.createElement(
+                                'p',
+                                { className: 'tag-row' },
+                                React.createElement(
+                                    'span',
+                                    { className: 'small-tag' },
+                                    item.author
+                                ),
+                                React.createElement(
+                                    'span',
+                                    { className: 'small-tag',
+                                        style: { background: "#fff" } },
+                                    '\u53D1\u8868\u4E8E\uFF1A',
+                                    new Date(item.createTime).format("yyyy年MM月dd日")
+                                )
+                            )
+                        );
+                    })
+                ),
+                React.createElement('div', { className: 'bd-other' })
             );
         }
     });

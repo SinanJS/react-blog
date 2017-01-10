@@ -1,20 +1,62 @@
 {
+
+  "call_apply": {
+    "key": "call_apply",
+    "fileName": "call与apply兄弟列传",
+    "createTime": 1481516592000,
+    "path": "call_apply.md",
+    "author": "司南泰坦",
+    "tags":["call","apply","JavaScript"],
+    "subTitle": "深入理解call与apply方法",
+    "contents": "",
+    "image":"https://github.com/SinanJS/sinan-blog/blob/master/img/kenan.jpg?raw=true",
+    "gist":"在JavaScript中，有这么俩货:call和apply，它们俩工作几乎一毛一样，却也有所区别，曾经对这个知识点非常困惑，看过几篇博客也没搞清楚这哥俩到底打算要干个啥，直到某天仔细研究过this关键词的相关知识点后，才恍然大悟"
+  },
   "key_word_this": {
+    "key": "key_word_this",
     "fileName": "理解JavaScript中的this关键词",
     "createTime": 1481516592000,
     "path": "key_word_this.md",
     "author": "司南泰坦",
     "tags":["this关键词","JavaScript"],
     "subTitle": "理解this关键词后才能好好的敲代码",
-    "contents": ""
+    "contents": "",
+    "image":"https://github.com/SinanJS/sinan-blog/blob/master/img/italy-gun.jpg?raw=true",
+    "gist":"this关键词是JavaScript语言中一个很重要，同时也是一个非常复杂的机制，它同时也是一个很特殊的关键词，它一般会被自动定义在函数的作用域中。不少很有经验的开发者也经常会被this的指向搞晕"
+  },
+  "learn_event": {
+    "key": "learn_event",
+    "fileName": "事件流与事件委托",
+    "createTime": 1481516592000,
+    "path": "learn_event.md",
+    "author": "司南泰坦",
+    "tags":["事件","JavaScript"],
+    "subTitle": "WebApp的驱动力之一",
+    "contents": "",
+    "image":"",
+    "gist":"事件，即文档或浏览器中发生的一些特定交互的瞬间，我们可以利用事件监听来预定事件，当事件发生的时候执行相应的处理程序。当事件发生在某个DOM节点上时，事件在DOM结构中进行一级一级的传递，这便形成了“流”"
+  },
+  "wechat_app": {
+    "key": "wechat_app",
+    "fileName": "微信小程序文档摘要",
+    "createTime": 1481516592000,
+    "path": "learn_event.md",
+    "author": "司南泰坦",
+    "tags":["微信","JavaScript"],
+    "subTitle": "实现应用“触手可及”的梦想",
+    "contents": "",
+    "image":"",
+    "gist":"小程序是一种不需要下载安装即可使用的应用，它实现了应用“触手可及”的梦想，用户扫一扫或者搜一下即可打开应用。也体现了“用完即走”的理念，用户不用关心是否安装太多应用的问题。"
   },
   "test_demo": {
+    "key": "test_demo",
     "fileName": "欢迎使用马克飞象",
     "createTime": 1481516592000,
     "path": "test_demo.md",
     "tags":["markdown","插件"],
     "author": "马克飞象",
     "subTitle": "专为印象笔记打造的Markdown编辑器",
+    "gist":"马克飞象是一款专为印象笔记（Evernote）打造的Markdown编辑器，通过精心的设计与技术实现，配合印象笔记强大的存储和同步功能，带来前所未有的书写体验",
     "contents": ""
   }
 }

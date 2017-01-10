@@ -54,4 +54,16 @@ router.get('/articleInfo', function (req, res, next) {
         pc = null;
     });
 });
+router.get('/articles/list',function (req,res,next) {
+    getConfig(function (pc) {
+        var arr = [];
+        for(var item in pc){
+            arr.push(pc[item]);
+        }
+        res.send(setSuccessJSON({
+            list:arr
+        }));
+    });
+    pc = null;
+});
 module.exports = router;

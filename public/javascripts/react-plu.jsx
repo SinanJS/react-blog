@@ -20,6 +20,7 @@ define(function (require, exports, module) {
             if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
         return fmt;
     };
+
     P.MenuBtn = React.createClass({
         getInitialState: function () {
             return {
@@ -61,9 +62,9 @@ define(function (require, exports, module) {
             let routes = {
                 list: [
                     {title: "首页", link: "/index"},
-                    {title: "博客", link: "/blog"},
+                    {title: "JavaScript", link: "/index"},
+                    {title: "Git相关", link: "/index"},
                     {title: "随笔", link: "#"},
-                    {title: "相册", link: "#"},
                     {title: "GitHub", link: "https://github.com/SinanJS/sinan-blog", phoneOnly: true}
                 ]
             };
@@ -131,7 +132,7 @@ define(function (require, exports, module) {
             return {
                 article: {
                     createTime: new Date().getTime(),
-                    tags:[]
+                    tags: []
                 }
             }
         },
@@ -161,7 +162,7 @@ define(function (require, exports, module) {
                         </p>
                         <p className="tag-row">
                             {
-                                _article.tags.map(function(item){
+                                _article.tags.map(function (item) {
                                     return <span key={item} className="small-tag">{item}</span>
                                 })
                             }
@@ -175,7 +176,7 @@ define(function (require, exports, module) {
     });
 
     P.PageFoot = React.createClass({
-        render:function () {
+        render: function () {
             return (
                 <div className="foot-box content-box">
                     <div className="flex-box">
@@ -183,45 +184,98 @@ define(function (require, exports, module) {
                             <img src="/images/logo-fff.png" alt=""/>
                             <p>
                                 除特别说明外，本站内容均采用
-                                <a href="https://creativecommons.org/licenses/by-nd/3.0/cn/deed.zh" target="_blank"> 知识共享"署名-禁止演绎 3.0 中国大陆"许可协议</a> 授权
+                                <a href="https://creativecommons.org/licenses/by-nd/3.0/cn/deed.zh" target="_blank">
+                                    知识共享"署名-禁止演绎 3.0 中国大陆"许可协议</a> 授权
                             </p>
                         </div>
                         <div className="placeholder"></div>
                         <div className="foot-about">
                             <div className="about-gp">
-                                 <div className="about-title">
+                                <div className="about-title">
                                     联系作者
-                                 </div>
-                                 <ul>
-                                     <li>
-                                         <img src="/images/icon/wechat.png" alt=""/>
-                                     </li>
-                                     <li>
-                                         <img src="/images/icon/weibo.png" alt=""/>
-                                     </li>
-                                     <li>
-                                         <img src="/images/icon/github.png" alt=""/>
-                                     </li>
-                                 </ul>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <img src="/images/icon/wechat.png" alt=""/>
+                                    </li>
+                                    <li>
+                                        <img src="/images/icon/weibo.png" alt=""/>
+                                    </li>
+                                    <li>
+                                        <img src="/images/icon/github.png" alt=""/>
+                                    </li>
+                                </ul>
                             </div>
                             <div className="about-gp">
-                                 <div className="about-title">
+                                <div className="about-title">
                                     关于本站
-                                 </div>
+                                </div>
                                 <a href=""><img className="aliyun" src="/images/aliyun.png" alt=""/></a>
                             </div>
                         </div>
                     </div>
                     <p className="logo-fff">
-                        <img src="/images/logo-fff.png" alt="" />
+                        <img src="/images/logo-fff.png" alt=""/>
                     </p>
                     <p className="cpr">
                         Copyright © 2016-{new Date().getFullYear()} TitanBlog
                     </p>
-                    <p style={{textAlign:"center"}} className="ICP">
-                        京ICP备11008151号
+                    <p style={{textAlign: "center"}} className="ICP">
+                        鲁ICP备11008151号
                     </p>
+                </div>
+            );
+        }
+    });
 
+    P.ArticleList = React.createClass({
+        componentDidMount: function () {
+            $.ajax({
+                url: "/api/articles/list",
+                dataType: "json",
+                success: function (result) {
+                    if (result.success === 1) {
+                        this.setState({articles: result.data.list});
+                    }
+                }.bind(this)
+            });
+        },
+        getInitialState: function () {
+            return {
+                articles: []
+            }
+        },
+        render: function () {
+            return (
+                <div className="index-body">
+                    <div className="article-list">
+                        {
+                            this.state.articles.map(function (item) {
+                                let href = "/blog/" + item.key;
+                                let imageShow = "none";
+                                if (!!item.image) {
+                                    imageShow = "block";
+                                }
+                                return <div className="list-item" key={item.key}>
+                                    <div className="article-title">
+                                        <a href={href} target="_blank" className="article-a">
+                                            {item.fileName}
+                                        </a>
+                                    </div>
+                                    <div className="article-gist">
+                                        <img src={item.image} style={{display: imageShow}}/>
+                                        {item.gist}…
+                                    </div>
+                                    <p className="tag-row">
+                                        <span className="small-tag">{item.author}</span>
+                                        <span className="small-tag"
+                                              style={{background: "#fff"}}>发表于：{new Date(item.createTime).format("yyyy年MM月dd日")}</span>
+                                    </p>
+                                </div>
+                            })
+                        }
+                    </div>
+                    <div className="bd-other"></div>
                 </div>
             );
         }
