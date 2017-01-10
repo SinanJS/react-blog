@@ -3,6 +3,7 @@
 define(function (require, exports, module) {
     let React = require('react');
     let ReactDOM = require('react-dom');
+    //let wx = require('weixin');
     let $ = require('jquery');
     let P = {};
     Date.prototype.format = function (fmt) { //author: meizz
@@ -20,7 +21,6 @@ define(function (require, exports, module) {
             if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
         return fmt;
     };
-
     P.MenuBtn = React.createClass({
         getInitialState: function () {
             return {

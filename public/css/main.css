@@ -327,6 +327,7 @@ a:focus {
   .page-body .md-preview {
     width: 800px;
     flex-wrap: nowrap;
+    padding: 20px 0;
   }
   .page-body .bd-other {
     flex-wrap: nowrap;
@@ -339,6 +340,9 @@ a:focus {
   }
   .page-body .bd-other {
     display: none;
+  }
+  .page-body .md-preview {
+    padding: 20px 0;
   }
 }
 .md-preview {
