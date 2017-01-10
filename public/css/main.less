@@ -3,6 +3,7 @@
 @blue: #337ab7;
 @deep-blue: #23527c;
 @d-yellow: #f0ad4e;
+@pc-width:1200px;
 html, body, p {
   font-family: Consolas, Microsoft YaHei, Source Code Pro, Menlo, Monaco, Courier New, monospace;
   font-size: 12px;
@@ -42,10 +43,10 @@ a:hover, a:focus {
   background-color: @yellow;
   border-top: 2px solid #333;
   .logo-img {
-    @media screen and (min-width: 1000px) {
+    @media screen and (min-width: @pc-width) {
       height: 35px;
     }
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: @pc-width) {
       height: 30px;
       margin-top: 2px;
     }
@@ -141,19 +142,19 @@ a:hover, a:focus {
 }
 
 .for-pc {
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: @pc-width) {
     display: flex;
   }
-  @media screen and (max-width: 999px) {
+  @media screen and (max-width: @pc-width) {
     display: none !important;
   }
 }
 
 .for-phone {
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: @pc-width) {
     display: none !important;
   }
-  @media screen and (max-width: 999px) {
+  @media screen and (max-width: @pc-width) {
     display: flex;
   }
 }
@@ -190,7 +191,7 @@ a:hover, a:focus {
 
 .banner-box {
   width: 100%;
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: @pc-width) {
     text-align: center;
     height: 450px;
     .banner-title {
@@ -206,7 +207,7 @@ a:hover, a:focus {
       text-shadow: 0px 1px 12px #333;
     }
   }
-  @media screen and (max-width: 999px) {
+  @media screen and (max-width: @pc-width) {
     background-size: 100%;
     background-position: center 0;
     background-repeat: repeat;
@@ -232,7 +233,7 @@ a:hover, a:focus {
 .title-box {
   width: 100%;
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: @pc-width) {
     height: 230px;
     text-align: left;
     width: 1200px;
@@ -283,7 +284,7 @@ a:hover, a:focus {
       color: #ffffff;
     }
   }
-  @media screen and (max-width: 999px) {
+  @media screen and (max-width: @pc-width) {
     background-size: 100%;
     background-position: center 0;
     background-repeat: repeat;
@@ -349,7 +350,7 @@ a:hover, a:focus {
 }
 
 .page-body {
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: @pc-width) {
     display: flex;
     .md-preview {
       width: 800px;
@@ -362,7 +363,7 @@ a:hover, a:focus {
       width: 400px;
     }
   }
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: @pc-width) {
     display: block;
     .bd-other {
       display: none;
@@ -466,7 +467,7 @@ a:hover, a:focus {
 .foot-box {
   padding: 15px;
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: @pc-width) {
     .flex-box {
       width: 100%;
       display: flex;
@@ -515,7 +516,7 @@ a:hover, a:focus {
       display: none;
     }
   }
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: @pc-width) {
     .cpr {
       text-align: center;
       font-size: 1rem;
@@ -574,11 +575,11 @@ a:focus {
   display: flex;
 }
 .article-list {
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: @pc-width) {
     width: 800px;
     flex-wrap: nowrap;
   }
-  @media screen and (max-width: 1000px){
+  @media screen and (max-width: @pc-width){
 
   }
   .list-item {
@@ -607,13 +608,13 @@ a:focus {
       background-position: 50%;
       background-repeat: no-repeat;
       background-size: 45%;
-      @media screen and (min-width: 1000px) {
+      @media screen and (min-width: @pc-width) {
         width: 200px;
         max-height: 150px;
         min-height: 80px;
         margin: 5px 10px 10px 0;
       }
-      @media screen and (max-width: 1000px){
+      @media screen and (max-width: @pc-width){
         min-width: 100px;
         min-height: 80px;
         width: 100px;
