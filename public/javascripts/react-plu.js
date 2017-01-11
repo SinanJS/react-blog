@@ -22,6 +22,21 @@ define(function (require, exports, module) {
             if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
         }return fmt;
     };
+    P.Link = React.createClass({
+        displayName: 'Link',
+
+        render: function render() {
+            var target = "_self";
+            if (window.document.body.clientWidth >= 1200) {
+                target = "_blank";
+            }
+            return React.createElement(
+                'a',
+                { href: this.props.href, className: this.props.className, target: target },
+                this.props.children
+            );
+        }
+    });
     P.MenuBtn = React.createClass({
         displayName: 'MenuBtn',
 
@@ -53,8 +68,8 @@ define(function (require, exports, module) {
                                 'li',
                                 { key: item.title },
                                 React.createElement(
-                                    'a',
-                                    { href: item.link, target: '_blank' },
+                                    P.Link,
+                                    { href: item.link },
                                     item.title
                                 )
                             );
@@ -333,7 +348,6 @@ define(function (require, exports, module) {
             );
         }
     });
-
     P.ArticleList = React.createClass({
         displayName: 'ArticleList',
 
@@ -373,8 +387,8 @@ define(function (require, exports, module) {
                                 'div',
                                 { className: 'article-title' },
                                 React.createElement(
-                                    'a',
-                                    { href: href, target: '_blank', className: 'article-a' },
+                                    P.Link,
+                                    { href: href, className: 'article-a' },
                                     item.fileName
                                 )
                             ),

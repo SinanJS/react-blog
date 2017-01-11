@@ -21,6 +21,17 @@ define(function (require, exports, module) {
             if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
         return fmt;
     };
+    P.Link = React.createClass({
+        render: function () {
+            let target = "_self";
+            if (window.document.body.clientWidth >= 1200) {
+                target = "_blank"
+            }
+            return (
+                <a href={this.props.href} className={this.props.className} target={target}>{this.props.children}</a>
+            )
+        }
+    });
     P.MenuBtn = React.createClass({
         getInitialState: function () {
             return {
@@ -42,7 +53,8 @@ define(function (require, exports, module) {
                         <ul>
                             {
                                 this.props.list.map(function (item) {
-                                    return <li key={item.title}><a href={item.link} target="_blank">{item.title}</a>
+                                    return <li key={item.title}>
+                                        <P.Link href={item.link}>{item.title}</P.Link>
                                     </li>
                                 })
                             }
@@ -81,9 +93,10 @@ define(function (require, exports, module) {
                             {
                                 this.props.list.map(function (item) {
                                     if (!item.phoneOnly) {
-                                        return <div key={item.title} className="head-item"><a href={item.link}
-                                                                                              target="_target"
-                                                                                              className="link-item">{item.title}</a>
+                                        return <div key={item.title} className="head-item">
+                                            <a href={item.link}
+                                               target="_target"
+                                               className="link-item">{item.title}</a>
                                         </div>
                                     }
                                 })
@@ -227,7 +240,6 @@ define(function (require, exports, module) {
             );
         }
     });
-
     P.ArticleList = React.createClass({
         componentDidMount: function () {
             $.ajax({
@@ -258,9 +270,7 @@ define(function (require, exports, module) {
                                 }
                                 return <div className="list-item" key={item.key}>
                                     <div className="article-title">
-                                        <a href={href} target="_blank" className="article-a">
-                                            {item.fileName}
-                                        </a>
+                                        <P.Link href={href} className="article-a">{item.fileName}</P.Link>
                                     </div>
                                     <div className="article-gist">
                                         <img src={item.image} style={{display: imageShow}}/>
