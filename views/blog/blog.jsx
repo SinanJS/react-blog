@@ -1,19 +1,15 @@
 "use strict";
 seajs.use(["react", 'react-dom','react-plu','jquery'], function (React, ReactDOM, Plus,$) {
-
-    let ArticleTitle =Plus.ArticleTitle;
-    let PageHead = Plus.PageHead;
-    let Foot = Plus.PageFoot;
     ReactDOM.render(
-        <PageHead/>,
+        <Plus.PageHead/>,
         $("#header-box")[0]
     );
     ReactDOM.render(
-        <ArticleTitle/>,
+        <Plus.ArticleTitle/>,
         $("#page-banner")[0]
     );
     ReactDOM.render(
-        <Foot/>,
+        <Plus.Foot/>,
         $(".page-foot")[0]
     );
     let target = document.querySelector('.page-banner');
