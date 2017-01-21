@@ -1,16 +1,19 @@
 {
-
   "call_apply": {
     "key": "call_apply",
     "fileName": "call与apply兄弟列传",
     "createTime": 1481516592000,
     "path": "call_apply.md",
     "author": "司南泰坦",
-    "tags":["call","apply","JavaScript"],
+    "tags": [
+      "call",
+      "apply",
+      "JavaScript"
+    ],
     "subTitle": "深入理解call与apply方法",
     "contents": "",
-    "image":"https://github.com/SinanJS/sinan-blog/blob/master/img/kenan.jpg?raw=true",
-    "gist":"在JavaScript中，有这么俩货:call和apply，它们俩工作几乎一毛一样，却也有所区别，曾经对这个知识点非常困惑，看过几篇博客也没搞清楚这哥俩到底打算要干个啥，直到某天仔细研究过this关键词的相关知识点后，才恍然大悟"
+    "image": "https://github.com/SinanJS/sinan-blog/blob/master/img/kenan.jpg?raw=true",
+    "gist": "在JavaScript中，有这么俩货:call和apply，它们俩工作几乎一毛一样，却也有所区别，曾经对这个知识点非常困惑，看过几篇博客也没搞清楚这哥俩到底打算要干个啥，直到某天仔细研究过this关键词的相关知识点后，才恍然大悟"
   },
   "key_word_this": {
     "key": "key_word_this",
@@ -18,11 +21,14 @@
     "createTime": 1481516592000,
     "path": "key_word_this.md",
     "author": "司南泰坦",
-    "tags":["this关键词","JavaScript"],
+    "tags": [
+      "this关键词",
+      "JavaScript"
+    ],
     "subTitle": "理解this关键词后才能好好的敲代码",
     "contents": "",
-    "image":"https://github.com/SinanJS/sinan-blog/blob/master/img/italy-gun.jpg?raw=true",
-    "gist":"this关键词是JavaScript语言中一个很重要，同时也是一个非常复杂的机制，它同时也是一个很特殊的关键词，它一般会被自动定义在函数的作用域中。不少很有经验的开发者也经常会被this的指向搞晕"
+    "image": "https://github.com/SinanJS/sinan-blog/blob/master/img/italy-gun.jpg?raw=true",
+    "gist": "this关键词是JavaScript语言中一个很重要，同时也是一个非常复杂的机制，它同时也是一个很特殊的关键词，它一般会被自动定义在函数的作用域中。不少很有经验的开发者也经常会被this的指向搞晕"
   },
   "learn_event": {
     "key": "learn_event",
@@ -30,11 +36,14 @@
     "createTime": 1481516592000,
     "path": "learn_event.md",
     "author": "司南泰坦",
-    "tags":["事件","JavaScript"],
+    "tags": [
+      "事件",
+      "JavaScript"
+    ],
     "subTitle": "WebApp的驱动力之一",
     "contents": "",
-    "image":"",
-    "gist":"事件，即文档或浏览器中发生的一些特定交互的瞬间，我们可以利用事件监听来预定事件，当事件发生的时候执行相应的处理程序。当事件发生在某个DOM节点上时，事件在DOM结构中进行一级一级的传递，这便形成了“流”"
+    "image": "",
+    "gist": "事件，即文档或浏览器中发生的一些特定交互的瞬间，我们可以利用事件监听来预定事件，当事件发生的时候执行相应的处理程序。当事件发生在某个DOM节点上时，事件在DOM结构中进行一级一级的传递，这便形成了“流”"
   },
   "wechat_app": {
     "key": "wechat_app",
@@ -42,11 +51,14 @@
     "createTime": 1481516592000,
     "path": "learn_event.md",
     "author": "司南泰坦",
-    "tags":["微信","JavaScript"],
+    "tags": [
+      "微信",
+      "JavaScript"
+    ],
     "subTitle": "实现应用“触手可及”的梦想",
     "contents": "",
-    "image":"",
-    "gist":"小程序是一种不需要下载安装即可使用的应用，它实现了应用“触手可及”的梦想，用户扫一扫或者搜一下即可打开应用。也体现了“用完即走”的理念，用户不用关心是否安装太多应用的问题。"
+    "image": "",
+    "gist": "小程序是一种不需要下载安装即可使用的应用，它实现了应用“触手可及”的梦想，用户扫一扫或者搜一下即可打开应用。也体现了“用完即走”的理念，用户不用关心是否安装太多应用的问题。"
   },
   "report_2016": {
     "key": "report_2016",
@@ -54,21 +66,40 @@
     "createTime": 1483920000000,
     "path": "report_2016.md",
     "author": "司南泰坦",
-    "tags":["必要商城"],
+    "tags": [
+      "必要商城"
+    ],
     "subTitle": "盘点我在必要商城掺和过的那些项目",
     "contents": "",
-    "image":"",
-    "gist":"余自去年3月份以实习生身份进入必要前端组，至今已有半年以上的时间。进入年底，有必要将我在公司做过的工作进行总结，以期对自身工作有客观全面的分析，亦对明年工作有所帮助"
+    "image": "",
+    "gist": "余自去年3月份以实习生身份进入必要前端组，至今已有半年以上的时间。进入年底，有必要将我在公司做过的工作进行总结，以期对自身工作有客观全面的分析，亦对明年工作有所帮助"
+  },
+  "xiamen2017": {
+    "key": "xiamen2017",
+    "fileName": "厦门自由行攻略",
+    "createTime": 1481516592000,
+    "path": "xiamen2017.md",
+    "tags": [
+      "厦门",
+      "自由行"
+    ],
+    "author": "司南",
+    "subTitle": "5天行程轻松玩转厦门鼓浪屿",
+    "gist": "若你自诩是一个文艺青年，欢迎来到厦门漫步城间小巷。大海、小岛、大学、双人单车、特色店、咖啡馆…一草一物绝不辜负“文艺”二字，让你尝尽文艺小资的调调。",
+    "contents": ""
   },
   "test_demo": {
     "key": "test_demo",
     "fileName": "欢迎使用马克飞象",
     "createTime": 1481516592000,
     "path": "test_demo.md",
-    "tags":["markdown","插件"],
+    "tags": [
+      "markdown",
+      "插件"
+    ],
     "author": "马克飞象",
     "subTitle": "专为印象笔记打造的Markdown编辑器",
-    "gist":"马克飞象是一款专为印象笔记（Evernote）打造的Markdown编辑器，通过精心的设计与技术实现，配合印象笔记强大的存储和同步功能，带来前所未有的书写体验",
+    "gist": "马克飞象是一款专为印象笔记（Evernote）打造的Markdown编辑器，通过精心的设计与技术实现，配合印象笔记强大的存储和同步功能，带来前所未有的书写体验",
     "contents": ""
   }
 }
