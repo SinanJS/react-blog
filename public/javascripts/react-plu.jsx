@@ -234,7 +234,7 @@ define(function (require, exports, module) {
                         Copyright © 2016-{new Date().getFullYear()} TitanBlog
                     </p>
                     <p style={{textAlign: "center"}} className="ICP">
-                        鲁ICP备11008151号
+                        鲁ICP备17005306号
                     </p>
                 </div>
             );
