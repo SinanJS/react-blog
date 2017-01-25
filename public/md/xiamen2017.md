@@ -69,5 +69,3 @@
 >都不满意？来，你自己挑，
 >- [美团厦门酒店搜索](http://i.meituan.com/awp/h5/hotel/search/search.html?stid_b=1&cevent=imt%2Fhomepage%2Fcategory1%2F20)
 >- [去哪儿厦门酒店搜索](http://touch.qunar.com/hotel/hotellist?type=0&cityUrl=xiamen&checkInDate=2017-01-21&checkOutDate=2017-01-22)
- 
- 
