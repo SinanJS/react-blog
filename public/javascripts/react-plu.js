@@ -343,7 +343,7 @@ define(function (require, exports, module) {
                 React.createElement(
                     'p',
                     { style: { textAlign: "center" }, className: 'ICP' },
-                    '\u9C81ICP\u590711008151\u53F7'
+                    '\u9C81ICP\u590717005306\u53F7'
                 )
             );
         }
