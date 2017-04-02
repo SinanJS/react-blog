@@ -8,7 +8,7 @@
 为了提高英语，我曾经这么干过：
 1.下载一个记单词的手机APP，天天坚持在坐地铁和公交的时候刷单词，背单词
 **结果：**脱离语境单纯背单词真的超级无聊，而且你一旦坚持不下来，有几天不复习，再见到同一个单词也一样觉得无聊，失败
-![](https://github.com/SinanJS/react-blog/blob/master/public/images/wanshouji.jpg?raw=true)
+![](https://github.com/SinanJS/react-blog/blob/master/public/images/xuexi.jpg?raw=true)
 
 2.买英语教材，一有时间就拿出来看
 **结果：**真心看不下去。。（我去面壁）
@@ -55,7 +55,7 @@
 以上内容感谢话说回来，我相信 Quora 对于英语学习的最大作用绝非是仅仅提供阅读素材，或者是作为一个写作锻炼的场所，而是能够帮助你发现——原来掌握了英语后，你真的可以参与到全世界的对话当中；你的谈话伙伴可能是一名美国陆战队老兵，一个印度IT学生，一位日本设计师，他们会分享自己的人生体验和故事，也愿意听听你的
 **以上内容感谢扇贝网@王捷[在知乎上的回答](https://www.zhihu.com/question/20499502)**
 Quora上有不少关于中国的话题：
-
+![](https://github.com/SinanJS/react-blog/blob/master/public/images/quora.png?raw=true)
 总之，在Quora上阅读真的是一种玩的心态在学习，而且你一旦找到兴趣点，你会对阅读英文这件事上瘾的。
 > 在AppStore上下载[Qoura手机App](https://appsto.re/cn/fIOlB.i) 或者点击浏览[Quora.com](https://www.quora.com/)
 
@@ -63,6 +63,8 @@ Quora上有不少关于中国的话题：
 Seed是一款新闻阅读软件。 内容为国外有关艺术科技等类别的资讯。 具有点词翻译、阅读、发音、保存单词，在单词表中再次查看、评论、分享等功能。
  Seed 的前沿资讯包括了科技，设计，艺术，时尚和生活方式领域，原文均来自各领域全球最优秀的博客或网站。从筛选出来的文章，足可看出 Seed 选材的用心及其鲜明的个性和生活态度。通过在线辞典即点翻译技术，在保持联网的状态下，Seed 提供了实时点击单词来查询翻译，即使是在阅读源网页也同样支持，这个设计让你几乎可以无障碍的阅读文章，也不用因为查单词而打断阅读体验
 Seed是市面上少见的英文类App，比起一般的英文新闻类App，比如**中国日报(China Daily)、经济学人(The Economist)、BBC News**等，它可以快速地帮助你翻译生词，并收集生词进行学习，比起一般的英文阅读APP来说，它有拥有更多来自权威杂志期刊的内容，让你在获取新闻的同时，你可以几乎无障碍的收集生疏单词，极大的扩充你的词汇量。
+Seed中仅仅需要点击单词，就可以快速获取单词的中文翻译
+![](https://github.com/SinanJS/react-blog/blob/master/public/images/seed.png?raw=true)
 > 在AppStore中获取[Seed](https://appsto.re/cn/fCtL8.i)
 
 #### 3. 有道词典
@@ -72,4 +74,6 @@ Seed是市面上少见的英文类App，比起一般的英文新闻类App，比�
 But anyway,学习这件事儿，还得靠坚持。学习和减肥，是最容易通过时间来证明效果的。
 
 以上内容纯属个人经验之谈，若有不足之处，请诸君不吝指正。
+祝你玩的开心，学的快乐！麻麻再也不能说我只知道玩手机啦~~咱这是在**学习！**
+![](https://github.com/SinanJS/react-blog/blob/master/public/images/wanshouji.jpg?raw=true)
 PS:你可以通过点击[这里](https://www.quora.com/profile/William-Chao-19)来从Quora中找到我，虽然目前只是一个阅读党。。。
