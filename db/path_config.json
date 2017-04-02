@@ -88,6 +88,20 @@
     "gist": "若你自诩是一个文艺青年，欢迎来到厦门漫步城间小巷。大海、小岛、大学、双人单车、特色店、咖啡馆…一草一物绝不辜负“文艺”二字，让你尝尽文艺小资的调调。",
     "contents": ""
   },
+  "learn_english": {
+    "key": "learn_english",
+    "fileName": "日常学英语的方法总结",
+    "createTime": 1491142662882,
+    "path": "learn_english.md",
+    "tags": [
+      "英语",
+      "日常学习"
+    ],
+    "author": "司南",
+    "subTitle": "充分利用手机阅读APP进行日常英语学习",
+    "gist": "到底踏马哒如何才能提高自己英语水平",
+    "contents": ""
+  },
   "test_demo": {
     "key": "test_demo",
     "fileName": "欢迎使用马克飞象",
