@@ -3,7 +3,7 @@ var router = express.Router();
 var http = require('http');
 var fs = require("fs");
 //var pc = require('../path_config');
-var getConfig = require('../path_config');
+var getConfig = require('../path_config.js');
 var Hyper = require("../HyperDown");
 
 var md2Html = new Hyper();
