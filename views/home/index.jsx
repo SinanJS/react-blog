@@ -13,6 +13,10 @@ seajs.use(["react", 'react-dom', 'react-plu', 'selector'], function (React, Reac
         <Plus.ArticleList/>,
         $(".page-body")[0]
     );
+    ReactDOM.render(
+       <Plus.HomeBanner/>,
+       document.querySelector("#page-banner")
+    );
     let target = document.querySelector('.page-banner');
     document.addEventListener('scroll', function () {
         let pageY = document.body.scrollTop || document.documentElement.scrollTop;

@@ -290,5 +290,13 @@ define(function (require, exports, module) {
             );
         }
     });
+    P.HomeBanner = React.createClass({
+        render: function () {
+            return (<section className="page-banner" style={{backgroundPosition: "center 133.333px;"}}>
+                <div className="banner-box"><p className="banner-title">Welcome Titan Blog !</p><p className="banner-subtxt f-w">
+                    一个简约的网站</p></div>
+            </section>);
+        }
+    });
     module.exports = P;
 });

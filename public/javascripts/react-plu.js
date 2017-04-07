@@ -422,5 +422,29 @@ define(function (require, exports, module) {
             );
         }
     });
+    P.HomeBanner = React.createClass({
+        displayName: 'HomeBanner',
+
+        render: function render() {
+            return React.createElement(
+                'section',
+                { className: 'page-banner', style: { backgroundPosition: "center 133.333px;" } },
+                React.createElement(
+                    'div',
+                    { className: 'banner-box' },
+                    React.createElement(
+                        'p',
+                        { className: 'banner-title' },
+                        'Welcome Titan Blog !'
+                    ),
+                    React.createElement(
+                        'p',
+                        { className: 'banner-subtxt f-w' },
+                        '\u4E00\u4E2A\u7B80\u7EA6\u7684\u7F51\u7AD9'
+                    )
+                )
+            );
+        }
+    });
     module.exports = P;
 });
