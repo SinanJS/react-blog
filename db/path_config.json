@@ -15,6 +15,20 @@
     "image": "https://github.com/SinanJS/sinan-blog/blob/master/img/kenan.jpg?raw=true",
     "gist": "在JavaScript中，有这么俩货:call和apply，它们俩工作几乎一毛一样，却也有所区别，曾经对这个知识点非常困惑，看过几篇博客也没搞清楚这哥俩到底打算要干个啥，直到某天仔细研究过this关键词的相关知识点后，才恍然大悟"
   },
+  "pc_home_api": {
+    "key": "pc_home_api",
+    "fileName": "PC站首页及商品分类页API统计",
+    "createTime": 1492510488425,
+    "path": "pc_home_api.md",
+    "author": "司南",
+    "tags": [
+      "api",
+      "PC站"
+    ],
+    "subTitle": "PC站首页及商品分类页API统计（初稿）",
+    "contents": "",
+    "gist": "对PC主站首页及商品分类页的API进行的初步整理和统计"
+  },
   "key_word_this": {
     "key": "key_word_this",
     "fileName": "理解JavaScript中的this关键词",
@@ -114,6 +128,7 @@
     ],
     "author": "马克飞象",
     "subTitle": "专为印象笔记打造的Markdown编辑器",
+
     "gist": "马克飞象是一款专为印象笔记（Evernote）打造的Markdown编辑器，通过精心的设计与技术实现，配合印象笔记强大的存储和同步功能，带来前所未有的书写体验",
     "contents": ""
   }
