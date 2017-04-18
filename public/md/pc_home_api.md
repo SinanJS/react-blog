@@ -1,0 +1,505 @@
+##PC站首页及商品分类页API统计
+####1.首页
+**页面地址：**http://www.biyao.com/home/index.html
+####1.1 获取购物车信息
+**API地址：**`/ShopCar/getShopCarNum.do`
+**API请求方式：**POST
+**Ajax地址：**`/RequestAPI/getCartNum`
+**Ajax类型：**JSONP
+**Ajax请求方式：**POST
+**响应：**
+```js
+{
+    "success": 1,
+    "data": {
+        "num":10
+    },
+    "error": null
+}
+```
+
+####1.2 获取首页数据
+**API地址：**`/cms/home/show.do`
+**API请求方式：**POST
+**响应：**
+```js
+{
+    "success":1,
+    "data":{
+        "banners":[
+            {
+                "pcImageUrl":"http://bfs.biyao.com/group1/M00/00/94/wKhj1Fjn3.jpg",
+                "ext":{
+                    "categoryID":"232",
+                    "title":"护发素"
+                },
+		"webpImageUrl":"http://bfs.biyao.com/group1/M00/00/94/wKhj1FjnNnOAU4GpAABVTBwnm4o889.webp",
+                "image":"http://bfs.biyao.com/group1/M00/00/94/wKhj1FjnNnOAU4GpAABVTBwnm4o889.jpg",
+                "clickType":"4"
+            }
+        ],
+        "article":{
+            "iconUrl":"http://bfs.biyao.com/group1/M00/00/A2/wKhj1FjvMDyAZq9iAAASVKmhrc8578.png",
+            "author":"韩青",
+            "publishDate":"2016-10-04",
+            "description":"如果没有民间力量和民间行动，中国游客就很难改变“我为鱼肉”的待宰之命。11",
+            "ext":{
+                "title":"宰客，不想管还是管不了？？",
+                "url":"http://news.biyao.com/m/article/050ca46eaac146c98c9b964782bd7e02.html",
+                "articleId":52,
+                "pcUrl":"http://news.biyao.com/pc/article/b8b0cb27ec8742318d5ed05b33618560.html",
+                "pcImageUrl":"http://imgcms.biyao.com/files//web/e0772b3ab9bf4b49ab40938d71a08d24.jpg"
+            },
+            "clickType":"2"
+        },
+        "pageSize":"10",
+        "pageCount":"2",
+        "pageIndex":"1",
+        "modules":[
+            {
+                "moduleType":"1",
+                "moduleInfo":{
+                    "moduleItems":[
+                        {
+                            "pcImageUrl":"",
+                            "ext":{
+                                "title":"周销量排行22"
+                            },
+                            "webpImageUrl":"http://bfs.biyao.com/group1/M00/00/93/wKhj1Fjl4T6AFU2tAABhMODdYGo589.webp",
+                            "image":"http://bfs.biyao.com/group1/M00/00/93/wKhj1Fjl4T6AFU2tAABhMODdYGo589.jpg",
+                            "clickType":"6"
+                        },
+                        {
+                            "pcImageUrl":"",
+                            "ext":{
+                                "categoryID":"229",
+                                "title":"洗护"
+                            },
+                            "webpImageUrl":"http://bfs.biyao.com/group1/M00/00/93/wKhj1Fjl4T6AKU-dAAEi-3TFxrg997.webp",
+                            "image":"http://bfs.biyao.com/group1/M00/00/93/127.jpg",
+                            "clickType":"4"
+                        },
+                        {
+                            "pcImageUrl":"",
+                            "ext":{
+                                "supplierID":"130108",
+                                "title":"Cerulean护肤品"
+                            },
+                            "webpImageUrl":"http://bfs.biyao.com/group1/M00/00/93/wKhj1Fjl4T-AL66BAABRzp9jxHw651.webp",
+                            "image":"http://bfs.biyao.com/group1/M00/00/93/wKhj1Fjl4T-AL66BAABRzp9jxHw651.jpg",
+                            "clickType":"3"
+                        },
+                        {
+                            "pcImageUrl":"",
+                            "ext":{
+                                "isModel":"1",
+                                "suId":"1300670011000010000"
+                            },
+                            "webpImageUrl":"http://bfs.biyao.com/group1/M00/00/93/wKhj1Fjl4T-AAHeiAADxLft1nuQ19.webp",
+                            "image":"http://bfs.biyao.com/group1/M00/00/93/wKhj1Fjl4T-AAHeiAADxLft1nuQ19.JPEG",
+                            "clickType":"1"
+                        }
+                    ],
+                    "moduleTitle":"内衣袜子"
+                }
+            }
+        ]
+    },
+    "error":null
+}
+```
+####1.3 获取轮播图下方卖点图文数据
+**API地址：**`/Cms/QuerySellingPoint`
+**API请求方式：**POST
+**响应：**
+```js
+{
+    "data":{
+        "head":[
+        ],
+        "banner":[
+            {
+                "descs":[
+                ],
+                "id":45,
+                "img_desc":"直连一线制造",
+                "litimg_url":"http://img.biyao.com/files/data0/web/92b6462b351db3.png",
+                "order_num":1,
+                "type":1
+            }
+        ]
+    },
+    "success":1
+}
+```
+####1.4 获取分享渠道的cookie值
+**API地址：**`/share/share`
+**API请求方式：**POST
+**响应：**
+```javascript
+暂未找到
+```
+#### 1.5获取模板数据
+**API地址：**`/getDataForHomePage/userInfo`
+**API请求方式：**POST
+**响应：**
+```javascript
+暂未找到
+```
+#### 1.6 首页加载更多
+**API地址：**`/cms/home/show.do`
+**API请求方式：**POST
+**Ajax地址：**`/home/getMoreModule`
+**Ajax请求方式：**Get
+**响应：**
+```javascript
+{
+    "data":{
+        "pageCount":"2",
+        "pageIndex":"2",
+        "pageSize":"10",
+        "banners":[
+            {
+                "ext":{
+                    "title":"护发素",
+                    "categoryID":"232"
+                },
+                "pcImageUrl":"http://bfs.biyao.com/group1/M00/00/94/wKhj1FjnNnOAf2OfAABqd9EZoew873.jpg",
+                "image":"http://bfs.biyao.com/group1/M00/00/94/wKhj1FjnNnOAU4GpAABVTBwnm4o889.jpg",
+                "webpImageUrl":"http://bfs.biyao.com/group1/M00/00/94/wKhj1FjnNnOAU4GpAABVTBwnm4o889.webp",
+                "clickType":"4"
+            }
+        ],
+        "article":{
+            "jumpType":2,
+            "ext":{
+                "pcImageUrl":"http://imgcms.biyao.com/files//web/e0772b3ab9bf4b49ab40938d71a08d24.jpg",
+                "pcUrl":"http://news.biyao.com/pc/article/b8b0cb27ec8742318d5ed05b33618560.html",
+                "articleId":52,
+                "title":"宰客，不想管还是管不了？？",
+                "url":"http://news.biyao.com/m/article/050ca46eaac146c98c9b964782bd7e02.html"
+            },
+            "author":"韩青",
+            "publishDate":"2016-10-04",
+            "description":"如果没有民间力量和民间行动，中国游客就很难改变“我为鱼肉”的待宰之命。11",
+            "iconUrl":"http://bfs.biyao.com/group1/M00/00/A2/wKhj1FjvMDyAZq9iAAASVKmhrc8578.png"
+        },
+        "modules":[
+            {
+                "moduleType":"3",
+                "moduleInfo":{
+                    "jumpType":101,
+                    "moduleImage":"http://bfs.biyao.com/group1/M00/00/93/wKhj1Fjl4WCAEQaZAAEqUqovLQU526.jpg",
+                    "manufacturers":"Hugo Boss、Burberry",
+                    "moduleTitle":"品质男装",
+                    "moduleBrand":"制造商出品",
+                    "moduleItems":[
+                        {
+                            "ext":{
+                                "itemName":"签名换货鞋靴女鞋",
+                                "isModel":"0",
+                                "supplierID":130047,
+                                "itemPrice":"1",
+                                "suId":"1300475106000100001",
+                                "salePoint":"签名换货鞋靴女鞋高跟鞋"
+                            },
+                            "image":"http://img.biyao.com/files/temp/7c/7c68589777dbb80b.jpg",
+                            "clickType":"3"
+                        }
+                    ],
+                    "webpImageUrl":"http://bfs.biyao.com/group1/M00/00/93/wKhj1Fjl4WCAEQaZAAEqUqovLQU526.webp",
+                    "title":"品质男装",
+                    "clickType":"4",
+                    "ancestorCategoryIds":"1,2",
+                    "categoryID":"2"
+                }
+            }
+        ]
+    },
+    "success":1,
+    "error":null
+}
+```
+#### 1.7 获取用户状态
+**API地址：**`/getDataForHomePage/userInfo`
+**API请求方式：**POST
+**Ajax地址：**`/home/getMoreModule`
+**Ajax请求方式：**Get
+**响应：**
+```javascript
+{
+    "data":{
+        "messageNum":1,
+        "nickname":"示例昵称",
+        "shopcarNum":5
+    },
+    "success":1
+}
+```
+
+#### 1.8 怀疑`已废弃`的接口
+**API地址：**`/Cms/SaveHomeBallot & /Cms/SaveHomeBallotTel`
+**API请求方式：**POST
+**Ajax地址：**`/home/testSupport.html & /home/testTel.html`
+**Ajax请求方式：**Get
+**响应：**
+```javascript
+{
+    "success": 0,
+    "error": {
+        "code": "200002",
+        "message": "??????"
+    }
+}
+```
+
+### 2. 分类页
+#### 2.1 获取类目
+**API地址：**`/cms/category/all/productlist.do`
+**API请求方式：**POST
+**响应：**
+```javascript
+{
+    "success":1,
+    "data":{
+        "isAnchorType":true,
+        "second_level_category_name":"男装1",
+        "second_level_category_id":2,
+        "categoryList":[
+            {
+                "categoryName":"西服",
+                "categoryId":134
+            }
+        ],
+        "categoryBarName":"男装1",
+        "first_level_category_id":1,
+        "third_level_category_id":134,
+        "productList":[
+            {
+                "categoryName":"西服 · Armani制造商出品",
+                "pcCategoryName":"西服",
+                "salePoint":"Armani制造商出品",
+                "frontendCategoryId":"134",
+                "item":[
+                    {
+                        "productId":"1300935008",
+                        "imageUrl":"http://img.biyao.com/something/some.jpg",
+                        "isModel":"false",
+                        "isShowIcon":0,
+                        "price":"519",
+                        "suId":"1300935008170100001",
+                        "title":"羊毛蚕丝轻便单西",
+                        "salePoint":"顶级材质修身版型精湛工艺",
+                        "supplierId":130093
+                    }
+                ]
+            }
+        ]
+    },
+    "error":null
+}
+```
+#### 2.2 获取商家商品数据
+**API地址：**`/cms/supplier/productlist.do`
+**API请求方式：**POST
+**响应：**
+```javascript
+{
+    "success":1,
+    "data":{
+        "pageCount":1,
+        "pageIndex":1,
+        "pageSize":32,
+        "productNum":2,
+        "productList":[
+            {
+                "productId":"1301010007",
+                "imageUrl":"http://img.biyao.com/files/temp/16/166e63f3d2d4cfe9.jpg",
+                "isModel":"true",
+                "isShowIcon":0,
+                "price":"159",
+                "suId":"1301010007000000010",
+                "title":"安全减负儿童书包",
+                "salePoint":"零甲醛零致癌物，安全绿色儿童书包",
+                "supplierId":130101
+            }
+        ],
+        "supplierInfo":{
+            "supplierName":"Freehigh儿童书包",
+            "isZcwebim":1,
+            "supplierId":130101,
+            "link":"http://m.biyao.com/nativeHtml/1301010007000000010.html?type=3",
+            "telephone":"9533859",
+            "serviceTime":"7*24小时服务的范德萨范萨发",
+            "logoUrl":"http://img.biyao.com/files/data0/2016/07/29/11/storelogo/e041e2cd6336490f.png",
+            "zcgroupid":"429ef7f6441c421ea7a54950cb9ecae9"
+        },
+        "header":{
+            "imageHeight":380,
+            "imageUrl":"http://img.biyao.com/files/temp/a2/a2c54c048e9d8de5.jpg",
+            "imageWidth":750,
+            "isModel":true,
+            "suId":"1301010010000710000"
+        },
+        "shareInfo":{
+            "shareContent":"我要的，才是必要的",
+            "shareImageUrl":"http://static.biyao.com/m/img/base/applogo.png",
+            "shareTitle":"",
+            "shareUrl":"http://m.biyao.com/classify/supplierHome?supplierId=130101"
+        },
+        "listTitle":"Freehigh儿童书包"
+    },
+    "error":null
+}
+```
+####2.3 获取商家相关评分
+**API地址：**`/comment/supplier/score/average.do`
+**API请求方式：**POST
+**响应：**
+```javascript
+{
+    "success":1,
+    "data":{
+        "supplier_id":130049,
+        "desc_score":4.8,
+        "logistics_score":4.7,
+        "service_score":4.6,
+        "comment_count":1375
+    },
+    "error":null
+}
+
+```
+####2.3 获取商家商品页
+**API地址：**`/cms/supplier/productlist.do`
+**API请求方式：**POST
+**Ajax地址：**`/classify/getMoreProduct?pageSize=32&pageIndex=2&supplierID=130053`
+**Ajax请求方式：**Get
+**响应：**
+```javascript
+{
+    "success":1,
+    "data":{
+        "pageCount":3,
+        "pageIndex":3,
+        "pageSize":32,
+        "productNum":68,
+        "productList":[
+            {
+                "productId":"1300490056",
+                "imageUrl":"http://img.biyao.com/something/some.jpg",
+                "isModel":"true",
+                "isShowIcon":0,
+                "price":"2019",
+                "suId":"1300490056000010010",
+                "title":"8格置物架",
+                "salePoint":"100%进口优质橡木，强度高耐磨损",
+                "supplierId":130049
+            }
+        ],
+        "supplierInfo":{
+            "supplierName":"BEHUGE家居",
+            "isZcwebim":1,
+            "supplierId":130049,
+            "link":"http://m.biyao.com/something/some.html?type=3",
+            "telephone":"9533859",
+            "serviceTime":"7*24小时服务的范德萨范萨发",
+            "logoUrl":"http://img.biyao.com/something/some.jpg",
+            "zcgroupid":"429ef7f6441c421ea7a54950cb9ecae9"
+        },
+        "header":{
+            "imageHeight":380,
+            "imageUrl":"http://img.biyao.com/something/some.jpg",
+            "imageWidth":750,
+            "isModel":true,
+            "suId":"1300490011000000000"
+        },
+        "shareInfo":{
+            "shareContent":"我要的，才是必要的",
+            "shareImageUrl":"http://static.biyao.com/something/some.png",
+            "shareTitle":"",
+            "shareUrl":"http://m.biyao.com/something/some?supplierId=130049"
+        },
+        "listTitle":"BEHUGE家居"
+    },
+    "error":null
+}
+
+```
+#### 2.4 销量专题
+**API地址：**`/cms/sales/productlist.do`
+**API请求方式：**POST
+**页面请求：**`http://www.biyao.com/classify/saleList.html?type=1或2`
+**响应：**
+```javascript
+{
+    "success":1,
+    "data":{
+        "pageCount":31,
+        "pageIndex":1,
+        "pageSize":32,
+        "productList":[
+            {
+                "productId":"1300475104",
+                "imageUrl":"http://img.biyao.com/files/temp/98/98558fe29cd61a71.jpg",
+                "isModel":"false",
+                "isShowIcon":0,
+                "price":"1",
+                "suId":"1300475104010100001",
+                "title":"无签名换货鞋靴女",
+                "salePoint":"无签名换货鞋靴女鞋高跟鞋",
+                "supplierId":130047
+            }
+        ],
+        "shareInfo":{
+            "shareContent":"我要的，才是必要的",
+            "shareImageUrl":"http://static.biyao.com/m/img/base/applogo.png",
+            "shareTitle":"",
+            "shareUrl":"http://m.biyao.com/classify/marketList?type=1"
+        },
+        "listTitle":"月销量排行11--lining"
+    },
+    "error":null
+}
+```
+#### 2.4 新品专题
+**API地址：**`/cms/new/productlist.do`
+**API请求方式：**POST
+**页面请求：**`http://www.biyao.com/classify/newProduct.html`
+**响应：**
+```javascript
+{
+    "success":1,
+    "data":{
+        "productList":[
+            {
+                "item":[
+                    {
+                        "productId":"1300475374",
+                        "imageUrl":"http://img.biyao.com//1491083787670389.jpg",
+                        "isModel":"false",
+                        "isShowIcon":1,
+                        "price":"1",
+                        "suId":"1300475374000000032",
+                        "title":"测试贴图兼容",
+                        "salePoint":"舒服",
+                        "supplierId":130047
+                    }
+                ],
+                "saleTime":"4月17日"
+            }
+        ],
+        "pageCount":9,
+        "pageIndex":1,
+        "pageSize":7,
+        "shareInfo":{
+            "shareContent":"我要的，才是必要的",
+            "shareImageUrl":"http://static.biyao.com/m/img/base/applogo.png",
+            "shareTitle":"",
+            "shareUrl":"http://m.biyao.com/classify/newproductList"
+        },
+        "listTitle":"每日上新"
+    },
+    "error":null
+}
+```
